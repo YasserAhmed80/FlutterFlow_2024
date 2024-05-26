@@ -1,0 +1,189 @@
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
+import 'package:provider/provider.dart';
+import 'select_list_model.dart';
+export 'select_list_model.dart';
+
+class SelectListWidget extends StatefulWidget {
+  const SelectListWidget({
+    super.key,
+    required this.dataSource,
+    required this.inputCode,
+  });
+
+  final String? dataSource;
+  final int? inputCode;
+
+  @override
+  State<SelectListWidget> createState() => _SelectListWidgetState();
+}
+
+class _SelectListWidgetState extends State<SelectListWidget> {
+  late SelectListModel _model;
+
+  @override
+  void setState(VoidCallback callback) {
+    super.setState(callback);
+    _model.onUpdate();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _model = createModel(context, () => SelectListModel());
+
+    // On component load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      setState(() {
+        _model.selectedCode = widget.inputCode;
+      });
+    });
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+  }
+
+  @override
+  void dispose() {
+    _model.maybeDispose();
+
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
+    return Container(
+      height: 400.0,
+      decoration: BoxDecoration(
+        color: FlutterFlowTheme.of(context).primaryBackground,
+        borderRadius: const BorderRadius.only(
+          bottomLeft: Radius.circular(0.0),
+          bottomRight: Radius.circular(0.0),
+          topLeft: Radius.circular(20.0),
+          topRight: Radius.circular(20.0),
+        ),
+        shape: BoxShape.rectangle,
+      ),
+      child: Column(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          Padding(
+            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
+            child: Container(
+              width: double.infinity,
+              height: 50.0,
+              decoration: BoxDecoration(
+                color: FlutterFlowTheme.of(context).primaryBackground,
+                borderRadius: BorderRadius.circular(15.0),
+              ),
+              alignment: const AlignmentDirectional(0.0, 0.0),
+              child: Text(
+                valueOrDefault<String>(
+                  widget.dataSource,
+                  'data source',
+                ),
+                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                      fontFamily: 'Inter',
+                      color: FlutterFlowTheme.of(context).primary,
+                      fontSize: 20.0,
+                      letterSpacing: 0.0,
+                      fontWeight: FontWeight.w900,
+                    ),
+              ),
+            ),
+          ),
+          Align(
+            alignment: const AlignmentDirectional(0.0, -1.0),
+            child: Padding(
+              padding: const EdgeInsets.all(2.0),
+              child: Builder(
+                builder: (context) {
+                  final refData = FFAppState()
+                      .appStateRefData
+                      .where((e) => e.source == widget.dataSource)
+                      .toList()
+                      .sortedList((e) => e.code)
+                      .toList();
+                  return SingleChildScrollView(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      children: List.generate(refData.length, (refDataIndex) {
+                        final refDataItem = refData[refDataIndex];
+                        return Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Expanded(
+                              child: Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    5.0, 0.0, 5.0, 0.0),
+                                child: InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    setState(() {
+                                      _model.selectedCode = refDataItem.code;
+                                    });
+                                    await Future.delayed(
+                                        const Duration(milliseconds: 2000));
+                                    Navigator.pop(context);
+                                  },
+                                  child: Container(
+                                    width: 100.0,
+                                    height: 43.0,
+                                    decoration: BoxDecoration(
+                                      color: refDataItem.code ==
+                                              _model.selectedCode
+                                          ? FlutterFlowTheme.of(context)
+                                              .tertiary
+                                          : FlutterFlowTheme.of(context)
+                                              .primaryBackground,
+                                      borderRadius: BorderRadius.circular(15.0),
+                                      border: Border.all(
+                                        color: const Color(0xFFCEAAAA),
+                                        width: 1.0,
+                                      ),
+                                    ),
+                                    child: Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          5.0, 5.0, 5.0, 5.0),
+                                      child: Text(
+                                        refDataItem.desc,
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Inter',
+                                              fontSize: 20.0,
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.w600,
+                                            ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        );
+                      })
+                          .divide(const SizedBox(height: 5.0))
+                          .addToStart(const SizedBox(height: 5.0))
+                          .addToEnd(const SizedBox(height: 5.0)),
+                    ),
+                  );
+                },
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}

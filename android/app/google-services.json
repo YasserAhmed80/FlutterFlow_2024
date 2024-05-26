@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "322829673101",
+    "project_id": "marriagematch-cba92",
+    "storage_bucket": "marriagematch-cba92.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:322829673101:android:ba0b8467d883bb5f1838c4",
+        "android_client_info": {
+          "package_name": "com.mycompany.marriageapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "322829673101-cek47kip51t3pd7e8nfdk254a54703ph.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFhnXeaR_TRzSToykzXVIHBLcdQ0EFuTc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "322829673101-cek47kip51t3pd7e8nfdk254a54703ph.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "322829673101-18da88ppmav1ggtcaf0fq9054v4rt78k.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.marriageapp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
