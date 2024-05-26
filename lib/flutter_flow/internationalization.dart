@@ -427,6 +427,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'sjfc15jn': {
+      'ar': 'send emial',
+      'en': '',
+    },
+    'i96l6cdz': {
       'ar': 'country',
       'en': '',
     },
@@ -436,6 +440,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'irk7auvq': {
       'ar': 'test',
+      'en': '',
+    },
+  },
+  // select_list
+  {
+    'nzjrp65c': {
+      'ar': 'X',
       'en': '',
     },
   },
