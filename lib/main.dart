@@ -148,6 +148,7 @@ class _NavBarPageState extends State<NavBarPage> {
       'customer_details': const CustomerDetailsWidget(),
       'users_list': const UsersListWidget(),
       'test_page': const TestPageWidget(),
+      'customer_new': const CustomerNewWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 
@@ -159,7 +160,7 @@ class _NavBarPageState extends State<NavBarPage> {
           _currentPage = null;
           _currentPageName = tabs.keys.toList()[i];
         }),
-        backgroundColor: Colors.white,
+        backgroundColor: FlutterFlowTheme.of(context).tertiary,
         selectedItemColor: FlutterFlowTheme.of(context).primary,
         unselectedItemColor: const Color(0x8A000000),
         showSelectedLabels: false,
@@ -203,6 +204,16 @@ class _NavBarPageState extends State<NavBarPage> {
             ),
             label: FFLocalizations.of(context).getText(
               'irk7auvq' /* test */,
+            ),
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: const Icon(
+              Icons.person_2,
+              size: 24.0,
+            ),
+            label: FFLocalizations.of(context).getText(
+              'nw6qu0jq' /* profile */,
             ),
             tooltip: '',
           )

@@ -377,45 +377,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Home',
     },
   },
-  // customer_new
-  {
-    'c8452vn7': {
-      'ar': 'Andrew D.',
-      'en': '',
-    },
-    'bnxh2jg5': {
-      'ar': 'andrew@domainname.com',
-      'en': '',
-    },
-    'qn20wuov': {
-      'ar': 'Your Account',
-      'en': '',
-    },
-    'x4h4zywk': {
-      'ar': 'Edit Profile',
-      'en': '',
-    },
-    '04zl9zah': {
-      'ar': 'Notification Settings',
-      'en': '',
-    },
-    'x2aw5js8': {
-      'ar': 'App Settings',
-      'en': '',
-    },
-    '3d98wgn6': {
-      'ar': 'Support',
-      'en': '',
-    },
-    'f75zd89n': {
-      'ar': 'Terms of Service',
-      'en': '',
-    },
-    'rqfoqojd': {
-      'ar': 'Home',
-      'en': '',
-    },
-  },
   // test_page
   {
     '2ve436f4': {
@@ -441,6 +402,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'irk7auvq': {
       'ar': 'test',
       'en': '',
+    },
+  },
+  // customer_new
+  {
+    '5cp4j6wm': {
+      'ar': 'Details',
+      'en': 'Details',
+    },
+    'nw6qu0jq': {
+      'ar': 'profile',
+      'en': 'Home',
     },
   },
   // select_list
