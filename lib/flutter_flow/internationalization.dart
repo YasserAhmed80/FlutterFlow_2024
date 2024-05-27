@@ -383,22 +383,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'Page Title',
       'en': '',
     },
-    '94eyp6xi': {
-      'ar': 'gender',
-      'en': '',
-    },
-    'sjfc15jn': {
-      'ar': 'send emial',
-      'en': '',
-    },
-    'i96l6cdz': {
-      'ar': 'country',
-      'en': '',
-    },
-    '2gor0abp': {
-      'ar': 'marital_status',
-      'en': '',
-    },
     'irk7auvq': {
       'ar': 'test',
       'en': '',
@@ -406,20 +390,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // customer_new
   {
-    '5cp4j6wm': {
-      'ar': 'Details',
-      'en': 'Details',
-    },
     'nw6qu0jq': {
       'ar': 'profile',
       'en': 'Home',
-    },
-  },
-  // select_list
-  {
-    'nzjrp65c': {
-      'ar': 'X',
-      'en': '',
     },
   },
   // Miscellaneous

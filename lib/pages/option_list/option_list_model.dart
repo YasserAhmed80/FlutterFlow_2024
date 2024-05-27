@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'select_list_widget.dart' show SelectListWidget;
+import 'option_list_widget.dart' show OptionListWidget;
 import 'package:flutter/material.dart';
 
-class SelectListModel extends FlutterFlowModel<SelectListWidget> {
+class OptionListModel extends FlutterFlowModel<OptionListWidget> {
   ///  Local state fields for this component.
 
   int? selectedCode;

@@ -1,23 +1,26 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/pages/select_list/select_list_widget.dart';
+import '/pages/option_list/option_list_widget.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
+import 'package:provider/provider.dart';
 import 'profile_edit_main_item_model.dart';
 export 'profile_edit_main_item_model.dart';
 
 class ProfileEditMainItemWidget extends StatefulWidget {
   const ProfileEditMainItemWidget({
     super.key,
-    required this.itemLable,
-    required this.itemData,
-    required this.itemType,
     required this.itemCode,
+    required this.itemType,
+    required this.itemLable,
+    required this.actionCallBack,
   });
 
-  final String? itemLable;
-  final String? itemData;
-  final String? itemType;
   final int? itemCode;
+  final String? itemType;
+  final String? itemLable;
+  final Future Function(int actionReturn)? actionCallBack;
 
   @override
   State<ProfileEditMainItemWidget> createState() =>
@@ -38,6 +41,13 @@ class _ProfileEditMainItemWidgetState extends State<ProfileEditMainItemWidget> {
     super.initState();
     _model = createModel(context, () => ProfileEditMainItemModel());
 
+    // On component load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      setState(() {
+        _model.selectedCode = widget.itemCode;
+      });
+    });
+
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -50,6 +60,8 @@ class _ProfileEditMainItemWidgetState extends State<ProfileEditMainItemWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return InkWell(
       splashColor: Colors.transparent,
       focusColor: Colors.transparent,
@@ -64,13 +76,25 @@ class _ProfileEditMainItemWidgetState extends State<ProfileEditMainItemWidget> {
           builder: (context) {
             return Padding(
               padding: MediaQuery.viewInsetsOf(context),
-              child: SelectListWidget(
+              child: OptionListWidget(
                 dataSource: widget.itemType!,
-                inputCode: widget.itemCode!,
+                inputICode: _model.selectedCode!,
               ),
             );
           },
-        ).then((value) => safeSetState(() {}));
+        ).then((value) => safeSetState(() => _model.returnCode = value));
+
+        setState(() {
+          _model.selectedCode = _model.returnCode;
+        });
+        await widget.actionCallBack?.call(
+          valueOrDefault<int>(
+            _model.selectedCode,
+            0,
+          ),
+        );
+
+        setState(() {});
       },
       child: Container(
         height: 60.0,
@@ -113,7 +137,7 @@ class _ProfileEditMainItemWidgetState extends State<ProfileEditMainItemWidget> {
                                     child: Text(
                                       valueOrDefault<String>(
                                         widget.itemLable,
-                                        'Ask question',
+                                        'label',
                                       ),
                                       textAlign: TextAlign.end,
                                       style: FlutterFlowTheme.of(context)
@@ -141,8 +165,15 @@ class _ProfileEditMainItemWidgetState extends State<ProfileEditMainItemWidget> {
                                         0.0, 0.0, 10.0, 0.0),
                                     child: Text(
                                       valueOrDefault<String>(
-                                        widget.itemData,
-                                        'see answers',
+                                        functions
+                                            .getRefItemLable(
+                                                widget.itemType,
+                                                _model.selectedCode,
+                                                FFAppState()
+                                                    .appStateRefData
+                                                    .toList())
+                                            ?.desc,
+                                        'data',
                                       ),
                                       textAlign: TextAlign.end,
                                       style: FlutterFlowTheme.of(context)

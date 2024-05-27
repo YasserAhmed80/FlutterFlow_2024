@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/pages/components/profile_edit_main_item/profile_edit_main_item_widget.dart';
 import '/pages/components/user_actions_main/user_actions_main_widget.dart';
+import '/pages/profile_edit_main_item/profile_edit_main_item_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'customer_new_model.dart';
@@ -67,8 +67,9 @@ class _CustomerNewWidgetState extends State<CustomerNewWidget> {
             ],
           ),
           title: Text(
-            FFLocalizations.of(context).getText(
-              '5cp4j6wm' /* Details */,
+            valueOrDefault<String>(
+              _model.nationalityCode?.toString(),
+              '111',
             ),
             style: FlutterFlowTheme.of(context).headlineMedium.override(
                   fontFamily: 'Open Sans',
@@ -154,16 +155,6 @@ class _CustomerNewWidgetState extends State<CustomerNewWidget> {
                     ),
                   ),
                 ),
-                wrapWithModel(
-                  model: _model.profileEditMainItemModel1,
-                  updateCallback: () => setState(() {}),
-                  child: const ProfileEditMainItemWidget(
-                    itemLable: 'جنسيتي',
-                    itemData: 'مصري',
-                    itemType: 'country',
-                    itemCode: 1,
-                  ),
-                ),
                 Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -175,63 +166,101 @@ class _CustomerNewWidgetState extends State<CustomerNewWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             wrapWithModel(
+                              model: _model.profileEditMainItemModel1,
+                              updateCallback: () => setState(() {}),
+                              child: ProfileEditMainItemWidget(
+                                itemCode: 3,
+                                itemType: 'country',
+                                itemLable: 'الدولة',
+                                actionCallBack: (actionReturn) async {
+                                  setState(() {
+                                    _model.nationalityCode = actionReturn;
+                                  });
+                                },
+                              ),
+                            ),
+                            wrapWithModel(
                               model: _model.profileEditMainItemModel2,
                               updateCallback: () => setState(() {}),
-                              child: const ProfileEditMainItemWidget(
-                                itemLable: 'عمري',
-                                itemData: '45',
-                                itemType: 'age',
+                              child: ProfileEditMainItemWidget(
                                 itemCode: 45,
+                                itemType: 'age',
+                                itemLable: 'السن',
+                                actionCallBack: (actionReturn) async {
+                                  setState(() {
+                                    _model.age = actionReturn;
+                                  });
+                                },
                               ),
                             ),
                             wrapWithModel(
                               model: _model.profileEditMainItemModel3,
                               updateCallback: () => setState(() {}),
-                              child: const ProfileEditMainItemWidget(
-                                itemLable: 'وزني',
-                                itemData: '90',
-                                itemType: 'weight',
+                              child: ProfileEditMainItemWidget(
                                 itemCode: 90,
+                                itemType: 'weight',
+                                itemLable: 'الوزن',
+                                actionCallBack: (actionReturn) async {
+                                  setState(() {
+                                    _model.weight = actionReturn;
+                                  });
+                                },
                               ),
                             ),
                             wrapWithModel(
                               model: _model.profileEditMainItemModel4,
                               updateCallback: () => setState(() {}),
-                              child: const ProfileEditMainItemWidget(
-                                itemLable: 'طولي',
-                                itemData: '190',
-                                itemType: 'height',
+                              child: ProfileEditMainItemWidget(
                                 itemCode: 190,
+                                itemType: 'height',
+                                itemLable: 'الطول',
+                                actionCallBack: (actionReturn) async {
+                                  setState(() {
+                                    _model.height = actionReturn;
+                                  });
+                                },
                               ),
                             ),
                             wrapWithModel(
                               model: _model.profileEditMainItemModel5,
                               updateCallback: () => setState(() {}),
-                              child: const ProfileEditMainItemWidget(
-                                itemLable: 'ديني',
-                                itemData: 'مسلم',
-                                itemType: 'religion',
+                              child: ProfileEditMainItemWidget(
                                 itemCode: 1,
+                                itemType: 'religion',
+                                itemLable: 'الديانة',
+                                actionCallBack: (actionReturn) async {
+                                  setState(() {
+                                    _model.religionCode = actionReturn;
+                                  });
+                                },
                               ),
                             ),
                             wrapWithModel(
                               model: _model.profileEditMainItemModel6,
                               updateCallback: () => setState(() {}),
-                              child: const ProfileEditMainItemWidget(
-                                itemLable: 'حالتي تالاجتماعية',
-                                itemData: 'اعزب',
+                              child: ProfileEditMainItemWidget(
+                                itemCode: 1,
                                 itemType: 'marital_status',
-                                itemCode: 2,
+                                itemLable: 'الحاله',
+                                actionCallBack: (actionReturn) async {
+                                  setState(() {
+                                    _model.maritalCode = actionReturn;
+                                  });
+                                },
                               ),
                             ),
                             wrapWithModel(
                               model: _model.profileEditMainItemModel7,
                               updateCallback: () => setState(() {}),
-                              child: const ProfileEditMainItemWidget(
-                                itemLable: 'الاستعداد للزواج',
-                                itemData: 'ارغب في الزاوج ',
+                              child: ProfileEditMainItemWidget(
+                                itemCode: 1,
                                 itemType: 'readiness\n',
-                                itemCode: 2,
+                                itemLable: 'الاستعداد للزواج',
+                                actionCallBack: (actionReturn) async {
+                                  setState(() {
+                                    _model.readinessCode = actionReturn;
+                                  });
+                                },
                               ),
                             ),
                           ]
