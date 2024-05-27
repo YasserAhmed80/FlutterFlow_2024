@@ -8,6 +8,8 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
+import 'dart:ffi';
+
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:rxdart/rxdart.dart';
 
@@ -43,5 +45,27 @@ Future onProjectLoad() async {
     });
   }
 
+// add list of numbers to the age, weight and height
+  addListOfNumbers(String data_source, int value_from, int value_to) {
+    // add numbers to app state
+
+    for (int i = value_from; i <= value_to; i++) {
+      DtRefTableStruct item = DtRefTableStruct();
+
+      item.code = i;
+      item.source = data_source;
+      item.desc = i.toString();
+      item.lng = 0; // all languages
+
+      FFAppState().update(() {
+        FFAppState().appStateRefData.add(item);
+      });
+    }
+  }
+
   await getCollectionData('ref_data');
+
+  addListOfNumbers('weight', 40, 150);
+  addListOfNumbers('height', 130, 240);
+  addListOfNumbers('age', 18, 70);
 }

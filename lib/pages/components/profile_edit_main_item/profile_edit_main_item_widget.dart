@@ -73,7 +73,7 @@ class _ProfileEditMainItemWidgetState extends State<ProfileEditMainItemWidget> {
         ).then((value) => safeSetState(() {}));
       },
       child: Container(
-        height: 80.0,
+        height: 60.0,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).primaryBackground,
           borderRadius: BorderRadius.circular(30.0),
