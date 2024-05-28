@@ -390,9 +390,20 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // customer_new
   {
+    'qno386d6': {
+      'ar': 'testing data',
+      'en': '',
+    },
     'nw6qu0jq': {
       'ar': 'profile',
       'en': 'Home',
+    },
+  },
+  // profile_images
+  {
+    '5no8ob7k': {
+      'ar': 'Shop',
+      'en': '',
     },
   },
   // Miscellaneous

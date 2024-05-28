@@ -8,3 +8,4 @@ export '/profile_new/profile_new_widget.dart' show ProfileNewWidget;
 export '/users_list/users_list_widget.dart' show UsersListWidget;
 export '/pages/test_page/test_page_widget.dart' show TestPageWidget;
 export '/pages/customer_new/customer_new_widget.dart' show CustomerNewWidget;
+export '/profile_images/profile_images_widget.dart' show ProfileImagesWidget;

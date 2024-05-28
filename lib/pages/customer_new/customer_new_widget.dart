@@ -1,10 +1,8 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/pages/components/user_actions_main/user_actions_main_widget.dart';
 import '/pages/profile_edit_main_item/profile_edit_main_item_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'customer_new_model.dart';
 export 'customer_new_model.dart';
 
@@ -112,6 +110,22 @@ class _CustomerNewWidgetState extends State<CustomerNewWidget> {
                           ),
                         ),
                       ),
+                      Container(
+                        width: 60.0,
+                        height: 60.0,
+                        decoration: BoxDecoration(
+                          color: const Color(0x21800080),
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            width: 1.0,
+                          ),
+                        ),
+                        child: Icon(
+                          Icons.add,
+                          color: FlutterFlowTheme.of(context).primary,
+                          size: 50.0,
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -126,27 +140,107 @@ class _CustomerNewWidgetState extends State<CustomerNewWidget> {
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          wrapWithModel(
-                            model: _model.userActionsMainModel1,
-                            updateCallback: () => setState(() {}),
-                            child: const UserActionsMainWidget(
-                              icon: FaIcon(
-                                FontAwesomeIcons.hamsa,
+                          Column(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Text(
+                                FFLocalizations.of(context).getText(
+                                  'qno386d6' /* testing data */,
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Inter',
+                                      fontSize: 20.0,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.w800,
+                                    ),
                               ),
-                              text: 'Salam',
-                              status: 0,
-                            ),
-                          ),
-                          wrapWithModel(
-                            model: _model.userActionsMainModel2,
-                            updateCallback: () => setState(() {}),
-                            child: const UserActionsMainWidget(
-                              icon: Icon(
-                                Icons.star_border,
+                              Text(
+                                valueOrDefault<String>(
+                                  _model.nationalityCode?.toString(),
+                                  '1',
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Inter',
+                                      letterSpacing: 0.0,
+                                    ),
                               ),
-                              text: 'Favorites',
-                              status: 1,
-                            ),
+                              Text(
+                                valueOrDefault<String>(
+                                  _model.age?.toString(),
+                                  '4',
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Inter',
+                                      letterSpacing: 0.0,
+                                    ),
+                              ),
+                              Text(
+                                valueOrDefault<String>(
+                                  _model.weight?.toString(),
+                                  '4',
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Inter',
+                                      letterSpacing: 0.0,
+                                    ),
+                              ),
+                              Text(
+                                valueOrDefault<String>(
+                                  _model.height?.toString(),
+                                  '4',
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Inter',
+                                      letterSpacing: 0.0,
+                                    ),
+                              ),
+                              Text(
+                                valueOrDefault<String>(
+                                  _model.religionCode?.toString(),
+                                  '4',
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Inter',
+                                      letterSpacing: 0.0,
+                                    ),
+                              ),
+                              Text(
+                                valueOrDefault<String>(
+                                  _model.maritalCode?.toString(),
+                                  '4',
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Inter',
+                                      letterSpacing: 0.0,
+                                    ),
+                              ),
+                              Text(
+                                valueOrDefault<String>(
+                                  _model.readinessCode?.toString(),
+                                  'f',
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Inter',
+                                      letterSpacing: 0.0,
+                                    ),
+                              ),
+                            ],
                           ),
                         ]
                             .divide(const SizedBox(width: 2.0))

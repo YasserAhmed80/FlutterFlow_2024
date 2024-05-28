@@ -408,13 +408,10 @@ class _ProfileNewWidgetState extends State<ProfileNewWidget> {
                             ),
                           ),
                         ),
-                        Align(
-                          alignment: const AlignmentDirectional(0.9, 0.0),
-                          child: Icon(
-                            Icons.arrow_forward_ios,
-                            color: FlutterFlowTheme.of(context).secondaryText,
-                            size: 18.0,
-                          ),
+                        Icon(
+                          Icons.arrow_forward_ios,
+                          color: FlutterFlowTheme.of(context).secondaryText,
+                          size: 18.0,
                         ),
                       ],
                     ),
