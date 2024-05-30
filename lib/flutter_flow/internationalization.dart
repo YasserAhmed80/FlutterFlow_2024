@@ -399,8 +399,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Home',
     },
   },
-  // profile_images
+  // profile_images_Edit
   {
+    'fruajb77': {
+      'ar': 'من فضلك ادخل 5 صور مناسبه',
+      'en': '',
+    },
     '5no8ob7k': {
       'ar': 'Shop',
       'en': '',

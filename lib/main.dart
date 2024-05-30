@@ -149,7 +149,7 @@ class _NavBarPageState extends State<NavBarPage> {
       'users_list': const UsersListWidget(),
       'test_page': const TestPageWidget(),
       'customer_new': const CustomerNewWidget(),
-      'profile_images': const ProfileImagesWidget(),
+      'profile_images_Edit': const ProfileImagesEditWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 

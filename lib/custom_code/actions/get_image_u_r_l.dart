@@ -27,7 +27,7 @@ Future<String?> getImageURL(String folderName, String fileName) async {
     return downloadURL;
   } catch (e) {
     // Handle any errors that occur during the upload process
-    print('Error uploading image: $e');
+    print('Error in get image URL: $e');
     return null;
   }
 }

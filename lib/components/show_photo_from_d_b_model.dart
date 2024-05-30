@@ -7,11 +7,6 @@ class ShowPhotoFromDBModel extends FlutterFlowModel<ShowPhotoFromDBWidget> {
 
   String? imgURL;
 
-  ///  State fields for stateful widgets in this component.
-
-  // Stores action output result for [Custom Action - getImageURL] action in show_photo_from_DB widget.
-  String? imageURL;
-
   @override
   void initState(BuildContext context) {}
 

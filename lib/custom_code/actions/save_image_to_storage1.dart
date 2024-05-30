@@ -42,6 +42,9 @@ Future<String?> saveImageToStorage1(
   //   fileData.name;
   fileName = fileData.name ?? '';
 
+  String timestamp = DateTime.now().millisecondsSinceEpoch.toString();
+  fileName = timestamp + fileName;
+
   // '${DateTime.now().millisecondsSinceEpoch}.jpg';
 
   try {
@@ -59,7 +62,7 @@ Future<String?> saveImageToStorage1(
               folderName); // collection name same as photo folder in storage
 
       DocumentReference documentReference = await collectionReference
-          .add({'cus_id': '100', 'img': fileName, 'c': '1'});
+          .add({'cus_id': '100', 'img': downloadURL, 'c': '1'});
     } catch (e) {
       print(e.toString());
     }

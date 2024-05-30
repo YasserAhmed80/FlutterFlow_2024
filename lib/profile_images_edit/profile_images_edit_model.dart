@@ -1,9 +1,9 @@
 import '/components/upload_photo_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'profile_images_widget.dart' show ProfileImagesWidget;
+import 'profile_images_edit_widget.dart' show ProfileImagesEditWidget;
 import 'package:flutter/material.dart';
 
-class ProfileImagesModel extends FlutterFlowModel<ProfileImagesWidget> {
+class ProfileImagesEditModel extends FlutterFlowModel<ProfileImagesEditWidget> {
   ///  Local state fields for this page.
 
   List<String> imageList = [];

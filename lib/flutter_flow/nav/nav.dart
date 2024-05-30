@@ -75,13 +75,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? const NavBarPage() : const ProfileImagesWidget(),
+          appStateNotifier.loggedIn ? const NavBarPage() : const ProfileImagesEditWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) =>
-              appStateNotifier.loggedIn ? const NavBarPage() : const ProfileImagesWidget(),
+          builder: (context, _) => appStateNotifier.loggedIn
+              ? const NavBarPage()
+              : const ProfileImagesEditWidget(),
         ),
         FFRoute(
           name: 'login',
@@ -128,11 +129,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               : const CustomerNewWidget(),
         ),
         FFRoute(
-          name: 'profile_images',
-          path: '/profileImages',
+          name: 'profile_images_Edit',
+          path: '/profileImagesEdit',
           builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'profile_images')
-              : const ProfileImagesWidget(),
+              ? const NavBarPage(initialPage: 'profile_images_Edit')
+              : const ProfileImagesEditWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -305,7 +306,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/profileImages';
+            return '/profileImagesEdit';
           }
           return null;
         },
