@@ -15,7 +15,7 @@ service cloud.firestore {
       allow delete: if false;
     }
 
-    match /cust_photos/{document} {
+    match /cus_photos/{document} {
       allow create: if true;
       allow read: if true;
       allow write: if true;

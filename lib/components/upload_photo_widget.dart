@@ -1,9 +1,8 @@
 import '/auth/firebase_auth/auth_util.dart';
-import '/backend/backend.dart';
-import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/upload_data.dart';
+import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'upload_photo_model.dart';
 export 'upload_photo_model.dart';
@@ -45,16 +44,13 @@ class _UploadPhotoWidgetState extends State<UploadPhotoWidget> {
       mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
-          child: Container(
-            width: 300.0,
-            height: 300.0,
-            decoration: BoxDecoration(
-              color: FlutterFlowTheme.of(context).primaryBackground,
-            ),
-            child: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
+        Expanded(
+          child: Padding(
+            padding: const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
+            child: Container(
+              width: double.infinity,
+              height: 300.0,
+              decoration: const BoxDecoration(),
               child: Stack(
                 children: [
                   if (_model.binaryData == null ||
@@ -63,44 +59,42 @@ class _UploadPhotoWidgetState extends State<UploadPhotoWidget> {
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 30.0),
                       child: Container(
-                        width: 300.0,
+                        width: double.infinity,
                         height: 300.0,
                         decoration: BoxDecoration(
-                          color: FlutterFlowTheme.of(context).primaryBackground,
                           borderRadius: BorderRadius.circular(12.0),
                           shape: BoxShape.rectangle,
                         ),
                         child: ClipRRect(
-                          borderRadius: BorderRadius.circular(50.0),
+                          borderRadius: BorderRadius.circular(10.0),
                           child: Image.network(
                             _model.url,
-                            width: 300.0,
-                            height: 199.0,
+                            width: double.infinity,
+                            height: double.infinity,
                             fit: BoxFit.cover,
                           ),
                         ),
                       ),
                     ),
-                  if ((_model.uploadedLocalFile2.bytes?.isNotEmpty ?? false))
+                  if ((_model.uploadedLocalFile.bytes?.isNotEmpty ?? false))
                     Padding(
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 30.0),
                       child: Container(
-                        width: 300.0,
+                        width: double.infinity,
                         height: 300.0,
                         decoration: BoxDecoration(
-                          color: FlutterFlowTheme.of(context).primaryBackground,
                           borderRadius: BorderRadius.circular(12.0),
                           shape: BoxShape.rectangle,
                         ),
                         child: AuthUserStreamWidget(
                           builder: (context) => ClipRRect(
-                            borderRadius: BorderRadius.circular(50.0),
+                            borderRadius: BorderRadius.circular(10.0),
                             child: Image.memory(
-                              _model.uploadedLocalFile2.bytes ??
+                              _model.uploadedLocalFile.bytes ??
                                   Uint8List.fromList([]),
-                              width: 300.0,
-                              height: 199.0,
+                              width: double.infinity,
+                              height: double.infinity,
                               fit: BoxFit.cover,
                             ),
                           ),
@@ -120,51 +114,12 @@ class _UploadPhotoWidgetState extends State<UploadPhotoWidget> {
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            {
-                              setState(() => _model.isDataUploading1 = true);
-                              var selectedUploadedFiles = <FFUploadedFile>[];
-                              var selectedMedia = <SelectedFile>[];
-                              var downloadUrls = <String>[];
-                              try {
-                                selectedUploadedFiles =
-                                    _model.uploadedLocalFile2.bytes!.isNotEmpty
-                                        ? [_model.uploadedLocalFile2]
-                                        : <FFUploadedFile>[];
-                                selectedMedia = selectedFilesFromUploadedFiles(
-                                  selectedUploadedFiles,
-                                );
-                                downloadUrls = (await Future.wait(
-                                  selectedMedia.map(
-                                    (m) async => await uploadData(
-                                        m.storagePath, m.bytes),
-                                  ),
-                                ))
-                                    .where((u) => u != null)
-                                    .map((u) => u!)
-                                    .toList();
-                              } finally {
-                                _model.isDataUploading1 = false;
-                              }
-                              if (selectedUploadedFiles.length ==
-                                      selectedMedia.length &&
-                                  downloadUrls.length == selectedMedia.length) {
-                                setState(() {
-                                  _model.uploadedLocalFile1 =
-                                      selectedUploadedFiles.first;
-                                  _model.uploadedFileUrl1 = downloadUrls.first;
-                                });
-                              } else {
-                                setState(() {});
-                                return;
-                              }
-                            }
-
-                            await CustPhotosRecord.collection
-                                .doc()
-                                .set(createCustPhotosRecordData(
-                                  cusId: '1',
-                                  url: _model.uploadedFileUrl1,
-                                ));
+                            // save_cus_photo
+                            _model.photoName =
+                                await actions.saveImageToStorage1(
+                              _model.binaryData,
+                              'cus_photos',
+                            );
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(
                                 content: Text(
@@ -179,6 +134,8 @@ class _UploadPhotoWidgetState extends State<UploadPhotoWidget> {
                                     FlutterFlowTheme.of(context).secondary,
                               ),
                             );
+
+                            setState(() {});
                           },
                           child: Container(
                             width: 60.0,
@@ -213,7 +170,7 @@ class _UploadPhotoWidgetState extends State<UploadPhotoWidget> {
                             if (selectedMedia != null &&
                                 selectedMedia.every((m) => validateFileFormat(
                                     m.storagePath, context))) {
-                              setState(() => _model.isDataUploading2 = true);
+                              setState(() => _model.isDataUploading = true);
                               var selectedUploadedFiles = <FFUploadedFile>[];
 
                               try {
@@ -227,12 +184,12 @@ class _UploadPhotoWidgetState extends State<UploadPhotoWidget> {
                                         ))
                                     .toList();
                               } finally {
-                                _model.isDataUploading2 = false;
+                                _model.isDataUploading = false;
                               }
                               if (selectedUploadedFiles.length ==
                                   selectedMedia.length) {
                                 setState(() {
-                                  _model.uploadedLocalFile2 =
+                                  _model.uploadedLocalFile =
                                       selectedUploadedFiles.first;
                                 });
                               } else {
@@ -241,9 +198,8 @@ class _UploadPhotoWidgetState extends State<UploadPhotoWidget> {
                               }
                             }
 
-                            setState(() {
-                              _model.binaryData = _model.uploadedLocalFile2;
-                            });
+                            _model.binaryData = _model.uploadedLocalFile;
+                            setState(() {});
                           },
                           child: Container(
                             width: 60.0,

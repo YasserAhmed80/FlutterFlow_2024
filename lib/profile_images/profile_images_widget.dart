@@ -1,3 +1,5 @@
+import '/backend/backend.dart';
+import '/components/show_photo_from_d_b_widget.dart';
 import '/components/upload_photo_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -43,32 +45,24 @@ class _ProfileImagesWidgetState extends State<ProfileImagesWidget> {
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+          backgroundColor: FlutterFlowTheme.of(context).primary,
           automaticallyImplyLeading: false,
-          actions: [
-            Align(
-              alignment: const AlignmentDirectional(0.0, -1.0),
-              child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 0.0),
-                child: FlutterFlowIconButton(
-                  borderColor: Colors.transparent,
-                  borderRadius: 30.0,
-                  borderWidth: 1.0,
-                  buttonSize: 60.0,
-                  icon: Icon(
-                    Icons.shopping_cart_outlined,
-                    color: FlutterFlowTheme.of(context).secondaryText,
-                    size: 30.0,
-                  ),
-                  onPressed: () {
-                    print('IconButton pressed ...');
-                  },
-                ),
-              ),
+          leading: FlutterFlowIconButton(
+            borderColor: Colors.transparent,
+            borderRadius: 30.0,
+            borderWidth: 1.0,
+            buttonSize: 60.0,
+            icon: const Icon(
+              Icons.arrow_back_rounded,
+              color: Colors.white,
+              size: 30.0,
             ),
-          ],
+            onPressed: () async {
+              context.pop();
+            },
+          ),
+          actions: const [],
           centerTitle: false,
-          elevation: 0.0,
         ),
         body: SafeArea(
           top: true,
@@ -76,14 +70,59 @@ class _ProfileImagesWidgetState extends State<ProfileImagesWidget> {
             mainAxisSize: MainAxisSize.max,
             children: [
               wrapWithModel(
-                model: _model.uploadPhotoModel1,
+                model: _model.uploadPhotoModel,
                 updateCallback: () => setState(() {}),
                 child: const UploadPhotoWidget(),
               ),
-              wrapWithModel(
-                model: _model.uploadPhotoModel2,
-                updateCallback: () => setState(() {}),
-                child: const UploadPhotoWidget(),
+              Expanded(
+                child: StreamBuilder<List<CusPhotosRecord>>(
+                  stream: queryCusPhotosRecord(),
+                  builder: (context, snapshot) {
+                    // Customize what your widget looks like when it's loading.
+                    if (!snapshot.hasData) {
+                      return Center(
+                        child: SizedBox(
+                          width: 50.0,
+                          height: 50.0,
+                          child: CircularProgressIndicator(
+                            valueColor: AlwaysStoppedAnimation<Color>(
+                              FlutterFlowTheme.of(context).primary,
+                            ),
+                          ),
+                        ),
+                      );
+                    }
+                    List<CusPhotosRecord> listViewCusPhotosRecordList =
+                        snapshot.data!;
+                    return ListView.separated(
+                      padding: const EdgeInsets.symmetric(vertical: 6.0),
+                      shrinkWrap: true,
+                      scrollDirection: Axis.vertical,
+                      itemCount: listViewCusPhotosRecordList.length,
+                      separatorBuilder: (_, __) => const SizedBox(height: 6.0),
+                      itemBuilder: (context, listViewIndex) {
+                        final listViewCusPhotosRecord =
+                            listViewCusPhotosRecordList[listViewIndex];
+                        return Container(
+                          width: 200.0,
+                          height: 200.0,
+                          decoration: const BoxDecoration(
+                            color: Color(0xFF522A2A),
+                            shape: BoxShape.rectangle,
+                          ),
+                          child: Align(
+                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            child: ShowPhotoFromDBWidget(
+                              key: Key(
+                                  'Keyzrr_${listViewIndex}_of_${listViewCusPhotosRecordList.length}'),
+                              image: listViewCusPhotosRecord.img,
+                            ),
+                          ),
+                        );
+                      },
+                    );
+                  },
+                ),
               ),
             ],
           ),

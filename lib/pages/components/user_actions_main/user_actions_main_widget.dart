@@ -37,9 +37,8 @@ class _UserActionsMainWidgetState extends State<UserActionsMainWidget> {
 
     // On component load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      setState(() {
-        _model.comStatus = widget.status;
-      });
+      _model.comStatus = widget.status;
+      setState(() {});
     });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
@@ -61,13 +60,11 @@ class _UserActionsMainWidgetState extends State<UserActionsMainWidget> {
       highlightColor: Colors.transparent,
       onTap: () async {
         if (_model.comStatus == 0) {
-          setState(() {
-            _model.comStatus = 1;
-          });
+          _model.comStatus = 1;
+          setState(() {});
         } else {
-          setState(() {
-            _model.comStatus = 0;
-          });
+          _model.comStatus = 0;
+          setState(() {});
         }
       },
       child: Container(

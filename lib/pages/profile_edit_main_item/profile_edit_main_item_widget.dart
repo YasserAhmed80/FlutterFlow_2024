@@ -43,9 +43,8 @@ class _ProfileEditMainItemWidgetState extends State<ProfileEditMainItemWidget> {
 
     // On component load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      setState(() {
-        _model.selectedCode = widget.itemCode;
-      });
+      _model.selectedCode = widget.itemCode;
+      setState(() {});
     });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
@@ -84,9 +83,8 @@ class _ProfileEditMainItemWidgetState extends State<ProfileEditMainItemWidget> {
           },
         ).then((value) => safeSetState(() => _model.returnCode = value));
 
-        setState(() {
-          _model.selectedCode = _model.returnCode;
-        });
+        _model.selectedCode = _model.returnCode;
+        setState(() {});
         await widget.actionCallBack?.call(
           valueOrDefault<int>(
             _model.selectedCode,

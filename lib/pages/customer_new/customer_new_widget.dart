@@ -267,9 +267,8 @@ class _CustomerNewWidgetState extends State<CustomerNewWidget> {
                                 itemType: 'country',
                                 itemLable: 'الدولة',
                                 actionCallBack: (actionReturn) async {
-                                  setState(() {
-                                    _model.nationalityCode = actionReturn;
-                                  });
+                                  _model.nationalityCode = actionReturn;
+                                  setState(() {});
                                 },
                               ),
                             ),
@@ -281,9 +280,8 @@ class _CustomerNewWidgetState extends State<CustomerNewWidget> {
                                 itemType: 'age',
                                 itemLable: 'السن',
                                 actionCallBack: (actionReturn) async {
-                                  setState(() {
-                                    _model.age = actionReturn;
-                                  });
+                                  _model.age = actionReturn;
+                                  setState(() {});
                                 },
                               ),
                             ),
@@ -295,9 +293,8 @@ class _CustomerNewWidgetState extends State<CustomerNewWidget> {
                                 itemType: 'weight',
                                 itemLable: 'الوزن',
                                 actionCallBack: (actionReturn) async {
-                                  setState(() {
-                                    _model.weight = actionReturn;
-                                  });
+                                  _model.weight = actionReturn;
+                                  setState(() {});
                                 },
                               ),
                             ),
@@ -309,9 +306,8 @@ class _CustomerNewWidgetState extends State<CustomerNewWidget> {
                                 itemType: 'height',
                                 itemLable: 'الطول',
                                 actionCallBack: (actionReturn) async {
-                                  setState(() {
-                                    _model.height = actionReturn;
-                                  });
+                                  _model.height = actionReturn;
+                                  setState(() {});
                                 },
                               ),
                             ),
@@ -323,9 +319,8 @@ class _CustomerNewWidgetState extends State<CustomerNewWidget> {
                                 itemType: 'religion',
                                 itemLable: 'الديانة',
                                 actionCallBack: (actionReturn) async {
-                                  setState(() {
-                                    _model.religionCode = actionReturn;
-                                  });
+                                  _model.religionCode = actionReturn;
+                                  setState(() {});
                                 },
                               ),
                             ),
@@ -337,9 +332,8 @@ class _CustomerNewWidgetState extends State<CustomerNewWidget> {
                                 itemType: 'marital_status',
                                 itemLable: 'الحاله',
                                 actionCallBack: (actionReturn) async {
-                                  setState(() {
-                                    _model.maritalCode = actionReturn;
-                                  });
+                                  _model.maritalCode = actionReturn;
+                                  setState(() {});
                                 },
                               ),
                             ),
@@ -351,9 +345,8 @@ class _CustomerNewWidgetState extends State<CustomerNewWidget> {
                                 itemType: 'readiness\n',
                                 itemLable: 'الاستعداد للزواج',
                                 actionCallBack: (actionReturn) async {
-                                  setState(() {
-                                    _model.readinessCode = actionReturn;
-                                  });
+                                  _model.readinessCode = actionReturn;
+                                  setState(() {});
                                 },
                               ),
                             ),

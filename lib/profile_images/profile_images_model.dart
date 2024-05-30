@@ -19,20 +19,16 @@ class ProfileImagesModel extends FlutterFlowModel<ProfileImagesWidget> {
 
   final unfocusNode = FocusNode();
   // Model for upload_photo component.
-  late UploadPhotoModel uploadPhotoModel1;
-  // Model for upload_photo component.
-  late UploadPhotoModel uploadPhotoModel2;
+  late UploadPhotoModel uploadPhotoModel;
 
   @override
   void initState(BuildContext context) {
-    uploadPhotoModel1 = createModel(context, () => UploadPhotoModel());
-    uploadPhotoModel2 = createModel(context, () => UploadPhotoModel());
+    uploadPhotoModel = createModel(context, () => UploadPhotoModel());
   }
 
   @override
   void dispose() {
     unfocusNode.dispose();
-    uploadPhotoModel1.dispose();
-    uploadPhotoModel2.dispose();
+    uploadPhotoModel.dispose();
   }
 }

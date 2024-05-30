@@ -25,3 +25,7 @@ DtRefTableStruct? getRefItemLable(
   }
   return null;
 }
+
+String? stringToImagePath(String? url) {
+  return url;
+}

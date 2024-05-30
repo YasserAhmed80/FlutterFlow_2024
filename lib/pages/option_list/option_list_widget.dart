@@ -36,9 +36,8 @@ class _OptionListWidgetState extends State<OptionListWidget> {
 
     // On component load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      setState(() {
-        _model.selectedCode = widget.inputICode;
-      });
+      _model.selectedCode = widget.inputICode;
+      setState(() {});
     });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
@@ -175,10 +174,9 @@ class _OptionListWidgetState extends State<OptionListWidget> {
                                         hoverColor: Colors.transparent,
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
-                                          setState(() {
-                                            _model.selectedCode =
-                                                refDataItem.code;
-                                          });
+                                          _model.selectedCode =
+                                              refDataItem.code;
+                                          setState(() {});
                                           await Future.delayed(
                                               const Duration(milliseconds: 10));
                                           Navigator.pop(

@@ -12,13 +12,10 @@ class UploadPhotoModel extends FlutterFlowModel<UploadPhotoWidget> {
 
   ///  State fields for stateful widgets in this component.
 
-  bool isDataUploading1 = false;
-  FFUploadedFile uploadedLocalFile1 =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl1 = '';
-
-  bool isDataUploading2 = false;
-  FFUploadedFile uploadedLocalFile2 =
+  // Stores action output result for [Custom Action - saveImageToStorage1] action in save_photo widget.
+  String? photoName;
+  bool isDataUploading = false;
+  FFUploadedFile uploadedLocalFile =
       FFUploadedFile(bytes: Uint8List.fromList([]));
 
   @override
