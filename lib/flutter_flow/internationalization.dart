@@ -377,17 +377,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Home',
     },
   },
-  // test_page
-  {
-    '2ve436f4': {
-      'ar': 'Page Title',
-      'en': '',
-    },
-    'irk7auvq': {
-      'ar': 'test',
-      'en': '',
-    },
-  },
   // customer_new
   {
     'qno386d6': {

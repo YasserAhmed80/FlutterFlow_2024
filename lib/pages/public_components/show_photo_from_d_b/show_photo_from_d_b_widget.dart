@@ -66,13 +66,17 @@ class _ShowPhotoFromDBWidgetState extends State<ShowPhotoFromDBWidget> {
               ),
               child: Stack(
                 children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(10.0),
-                    child: Image.network(
-                      functions.stringToImagePath(widget.docRef?.img)!,
-                      width: double.infinity,
-                      height: double.infinity,
-                      fit: BoxFit.cover,
+                  Hero(
+                    tag: functions.stringToImagePath(widget.docRef?.img)!,
+                    transitionOnUserGestures: true,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(10.0),
+                      child: Image.network(
+                        functions.stringToImagePath(widget.docRef?.img)!,
+                        width: double.infinity,
+                        height: double.infinity,
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                   Align(

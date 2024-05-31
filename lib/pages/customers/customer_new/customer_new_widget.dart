@@ -1,7 +1,7 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/pages/profile_edit_main_item/profile_edit_main_item_widget.dart';
+import '/pages/customers/components/profile_edit_main_item/profile_edit_main_item_widget.dart';
 import 'package:flutter/material.dart';
 import 'customer_new_model.dart';
 export 'customer_new_model.dart';

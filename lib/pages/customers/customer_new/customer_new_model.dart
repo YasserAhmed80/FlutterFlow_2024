@@ -1,5 +1,5 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import '/pages/profile_edit_main_item/profile_edit_main_item_widget.dart';
+import '/pages/customers/components/profile_edit_main_item/profile_edit_main_item_widget.dart';
 import 'customer_new_widget.dart' show CustomerNewWidget;
 import 'package:flutter/material.dart';
 

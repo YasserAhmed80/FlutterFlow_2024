@@ -1,8 +1,8 @@
 import '/components/profile_essential_item_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/pages/components/about_me_item/about_me_item_widget.dart';
-import '/pages/components/descripe_me/descripe_me_widget.dart';
-import '/pages/components/user_actions_main/user_actions_main_widget.dart';
+import '/pages/customers/components/about_me_item/about_me_item_widget.dart';
+import '/pages/customers/components/descripe_me/descripe_me_widget.dart';
+import '/pages/customers/components/user_actions_main/user_actions_main_widget.dart';
 import 'customer_details_widget.dart' show CustomerDetailsWidget;
 import 'package:flutter/material.dart';
 

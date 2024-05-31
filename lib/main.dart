@@ -147,7 +147,6 @@ class _NavBarPageState extends State<NavBarPage> {
       'login': const LoginWidget(),
       'customer_details': const CustomerDetailsWidget(),
       'users_list': const UsersListWidget(),
-      'test_page': const TestPageWidget(),
       'customer_new': const CustomerNewWidget(),
       'profile_images_Edit': const ProfileImagesEditWidget(),
     };
@@ -195,16 +194,6 @@ class _NavBarPageState extends State<NavBarPage> {
             ),
             label: FFLocalizations.of(context).getText(
               'cg71wog8' /* Home */,
-            ),
-            tooltip: '',
-          ),
-          BottomNavigationBarItem(
-            icon: const Icon(
-              Icons.textsms,
-              size: 24.0,
-            ),
-            label: FFLocalizations.of(context).getText(
-              'irk7auvq' /* test */,
             ),
             tooltip: '',
           ),

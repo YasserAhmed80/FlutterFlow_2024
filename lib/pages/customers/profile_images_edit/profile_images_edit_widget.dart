@@ -1,8 +1,8 @@
 import '/backend/backend.dart';
-import '/components/show_photo_from_d_b_widget.dart';
-import '/components/upload_photo_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/pages/public_components/show_photo_from_d_b/show_photo_from_d_b_widget.dart';
+import '/pages/public_components/upload_photo/upload_photo_widget.dart';
 import 'package:flutter/material.dart';
 import 'profile_images_edit_model.dart';
 export 'profile_images_edit_model.dart';
@@ -75,7 +75,9 @@ class _ProfileImagesEditWidgetState extends State<ProfileImagesEditWidget> {
                 child: wrapWithModel(
                   model: _model.uploadPhotoModel,
                   updateCallback: () => setState(() {}),
-                  child: const UploadPhotoWidget(),
+                  child: const UploadPhotoWidget(
+                    storageFolder: 'cus_photos',
+                  ),
                 ),
               ),
               Expanded(
@@ -99,7 +101,12 @@ class _ProfileImagesEditWidgetState extends State<ProfileImagesEditWidget> {
                     List<CusPhotosRecord> gridViewCusPhotosRecordList =
                         snapshot.data!;
                     return GridView.builder(
-                      padding: EdgeInsets.zero,
+                      padding: const EdgeInsets.fromLTRB(
+                        0,
+                        5.0,
+                        0,
+                        5.0,
+                      ),
                       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 2,
                         crossAxisSpacing: 5.0,
