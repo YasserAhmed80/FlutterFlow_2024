@@ -38,6 +38,7 @@ class _UploadPhotoWidgetState extends State<UploadPhotoWidget> {
     // On component load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       _model.saveLoadImage = false;
+      _model.isLoading = false;
       setState(() {});
     });
 
@@ -66,8 +67,7 @@ class _UploadPhotoWidgetState extends State<UploadPhotoWidget> {
               decoration: const BoxDecoration(),
               child: Stack(
                 children: [
-                  if (_model.uplodedImage == null ||
-                      (_model.uplodedImage?.bytes?.isEmpty ?? true))
+                  if (_model.saveLoadImage == false)
                     Padding(
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 30.0),
@@ -77,20 +77,18 @@ class _UploadPhotoWidgetState extends State<UploadPhotoWidget> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12.0),
                           shape: BoxShape.rectangle,
-                        ),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(10.0),
-                          child: Image.network(
-                            _model.url,
-                            width: double.infinity,
-                            height: double.infinity,
-                            fit: BoxFit.cover,
+                          border: Border.all(
+                            color: FlutterFlowTheme.of(context).secondary,
                           ),
+                        ),
+                        child: Icon(
+                          Icons.add_a_photo_outlined,
+                          color: FlutterFlowTheme.of(context).secondaryText,
+                          size: 150.0,
                         ),
                       ),
                     ),
-                  if (_model.uplodedImage != null &&
-                      (_model.uplodedImage?.bytes?.isNotEmpty ?? false))
+                  if (_model.saveLoadImage == true)
                     Padding(
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 30.0),
@@ -156,6 +154,9 @@ class _UploadPhotoWidgetState extends State<UploadPhotoWidget> {
                             onPressed: (_model.saveLoadImage == false)
                                 ? null
                                 : () async {
+                                    // StartSaving
+                                    _model.isLoading = true;
+                                    setState(() {});
                                     // save_cus_photo
                                     _model.photoName =
                                         await actions.saveImageToStorage1(
@@ -163,6 +164,7 @@ class _UploadPhotoWidgetState extends State<UploadPhotoWidget> {
                                       widget.storageFolder!,
                                     );
                                     _model.saveLoadImage = false;
+                                    _model.isLoading = false;
                                     setState(() {});
                                     ScaffoldMessenger.of(context).showSnackBar(
                                       SnackBar(
@@ -212,7 +214,7 @@ class _UploadPhotoWidgetState extends State<UploadPhotoWidget> {
                               size: 30.0,
                             ),
                             showLoadingIndicator: true,
-                            onPressed: (_model.saveLoadImage == true)
+                            onPressed: (_model.isLoading == true)
                                 ? null
                                 : () async {
                                     final selectedMedia =

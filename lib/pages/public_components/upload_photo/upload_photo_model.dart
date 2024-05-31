@@ -12,6 +12,8 @@ class UploadPhotoModel extends FlutterFlowModel<UploadPhotoWidget> {
 
   bool saveLoadImage = false;
 
+  bool? isLoading;
+
   ///  State fields for stateful widgets in this component.
 
   // Stores action output result for [Custom Action - saveImageToStorage1] action in IconButton widget.

@@ -149,6 +149,7 @@ class _NavBarPageState extends State<NavBarPage> {
       'users_list': const UsersListWidget(),
       'customer_new': const CustomerNewWidget(),
       'profile_images_Edit': const ProfileImagesEditWidget(),
+      'customer_new_initial': const CustomerNewInitialWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 
@@ -214,6 +215,16 @@ class _NavBarPageState extends State<NavBarPage> {
             ),
             label: FFLocalizations.of(context).getText(
               '5no8ob7k' /* Shop */,
+            ),
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: const Icon(
+              Icons.person_2,
+              size: 24.0,
+            ),
+            label: FFLocalizations.of(context).getText(
+              'o8o9bduq' /* profile */,
             ),
             tooltip: '',
           )

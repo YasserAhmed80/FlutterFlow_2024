@@ -10,3 +10,5 @@ export '/pages/customers/customer_new/customer_new_widget.dart'
     show CustomerNewWidget;
 export '/pages/customers/profile_images_edit/profile_images_edit_widget.dart'
     show ProfileImagesEditWidget;
+export '/pages/customer_new_initial/customer_new_initial_widget.dart'
+    show CustomerNewInitialWidget;

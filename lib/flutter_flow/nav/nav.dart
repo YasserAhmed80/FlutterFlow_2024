@@ -127,6 +127,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => params.isEmpty
               ? const NavBarPage(initialPage: 'profile_images_Edit')
               : const ProfileImagesEditWidget(),
+        ),
+        FFRoute(
+          name: 'customer_new_initial',
+          path: '/customer_new_initial',
+          builder: (context, params) => params.isEmpty
+              ? const NavBarPage(initialPage: 'customer_new_initial')
+              : const CustomerNewInitialWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

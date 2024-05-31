@@ -399,6 +399,21 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
+  // customer_new_initial
+  {
+    'uj1y5hi4': {
+      'ar': 'السلام عليكم و رحمة الله',
+      'en': '',
+    },
+    'yqncd4hh': {
+      'ar': 'الاسم ',
+      'en': '',
+    },
+    'o8o9bduq': {
+      'ar': 'profile',
+      'en': 'Home',
+    },
+  },
   // Miscellaneous
   {
     'd04dzvhy': {
