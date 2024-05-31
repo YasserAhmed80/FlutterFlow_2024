@@ -11,10 +11,12 @@ class OptionListWidget extends StatefulWidget {
     super.key,
     required this.dataSource,
     required this.inputICode,
-  });
+    int? countryCode,
+  }) : countryCode = countryCode ?? 0;
 
   final String? dataSource;
   final int? inputICode;
+  final int countryCode;
 
   @override
   State<OptionListWidget> createState() => _OptionListWidgetState();
@@ -148,7 +150,9 @@ class _OptionListWidgetState extends State<OptionListWidget> {
                     builder: (context) {
                       final refData = FFAppState()
                           .appStateRefData
-                          .where((e) => e.source == widget.dataSource)
+                          .where((e) =>
+                              (e.source == widget.dataSource) &&
+                              (e.countryCde == widget.countryCode))
                           .toList()
                           .sortedList((e) => e.code)
                           .toList();

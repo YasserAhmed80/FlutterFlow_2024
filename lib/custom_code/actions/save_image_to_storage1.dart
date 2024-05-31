@@ -43,7 +43,7 @@ Future<String?> saveImageToStorage1(
   fileName = fileData.name ?? '';
 
   String timestamp = DateTime.now().millisecondsSinceEpoch.toString();
-  fileName = timestamp + fileName;
+  fileName = timestamp;
 
   // '${DateTime.now().millisecondsSinceEpoch}.jpg';
 

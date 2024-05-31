@@ -5,6 +5,12 @@ import 'package:flutter/material.dart';
 
 class CustomerNewInitialModel
     extends FlutterFlowModel<CustomerNewInitialWidget> {
+  ///  Local state fields for this page.
+
+  int? selectedCountry = 1;
+
+  int? selectedCovern = -1;
+
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
@@ -13,15 +19,11 @@ class CustomerNewInitialModel
   TextEditingController? nameTextController;
   String? Function(BuildContext, String?)? nameTextControllerValidator;
   // Model for profile_edit_main_item component.
-  late ProfileEditMainItemModel profileEditMainItemModel1;
-  // Model for profile_edit_main_item component.
-  late ProfileEditMainItemModel profileEditMainItemModel2;
+  late ProfileEditMainItemModel profileEditMainItemModel;
 
   @override
   void initState(BuildContext context) {
-    profileEditMainItemModel1 =
-        createModel(context, () => ProfileEditMainItemModel());
-    profileEditMainItemModel2 =
+    profileEditMainItemModel =
         createModel(context, () => ProfileEditMainItemModel());
   }
 
@@ -31,7 +33,6 @@ class CustomerNewInitialModel
     nameFocusNode?.dispose();
     nameTextController?.dispose();
 
-    profileEditMainItemModel1.dispose();
-    profileEditMainItemModel2.dispose();
+    profileEditMainItemModel.dispose();
   }
 }

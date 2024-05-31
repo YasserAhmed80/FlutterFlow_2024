@@ -17,9 +17,12 @@ DtRefTableStruct? getRefItemLable(
   String? itemType,
   int? itemCode,
   List<DtRefTableStruct> refDataAppState,
+  int? countryCode,
 ) {
   for (DtRefTableStruct item in refDataAppState) {
-    if (item.code == itemCode && item.source == itemType) {
+    if (item.code == itemCode &&
+        item.source == itemType &&
+        item.countryCde == countryCode) {
       return item;
     }
   }

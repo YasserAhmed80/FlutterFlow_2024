@@ -1,5 +1,5 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import '/pages/public_components/upload_photo/upload_photo_widget.dart';
+import '/pages/upload_photo/upload_photo_widget.dart';
 import 'profile_images_edit_widget.dart' show ProfileImagesEditWidget;
 import 'package:flutter/material.dart';
 

@@ -1,7 +1,9 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/customers/components/profile_edit_main_item/profile_edit_main_item_widget.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'customer_new_initial_model.dart';
 export 'customer_new_initial_model.dart';
 
@@ -38,6 +40,8 @@ class _CustomerNewInitialWidgetState extends State<CustomerNewInitialWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -49,7 +53,8 @@ class _CustomerNewInitialWidgetState extends State<CustomerNewInitialWidget> {
           top: true,
           child: SingleChildScrollView(
             child: Column(
-              mainAxisSize: MainAxisSize.max,
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Padding(
                   padding:
@@ -119,7 +124,6 @@ class _CustomerNewInitialWidgetState extends State<CustomerNewInitialWidget> {
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Inter',
-                          color: FlutterFlowTheme.of(context).primary,
                           fontSize: 20.0,
                           letterSpacing: 0.0,
                           fontWeight: FontWeight.bold,
@@ -129,30 +133,150 @@ class _CustomerNewInitialWidgetState extends State<CustomerNewInitialWidget> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
-                  child: wrapWithModel(
-                    model: _model.profileEditMainItemModel1,
-                    updateCallback: () => setState(() {}),
-                    child: ProfileEditMainItemWidget(
-                      itemCode: -1,
-                      itemType: 'country',
-                      itemLable: 'الدوله',
-                      actionCallBack: (actionReturn) async {},
-                    ),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Flexible(
+                        child: Align(
+                          alignment: const AlignmentDirectional(0.0, -1.0),
+                          child: Builder(
+                            builder: (context) {
+                              final countryRef = FFAppState()
+                                  .appStateRefData
+                                  .map((e) => e)
+                                  .toList()
+                                  .where((e) => e.source == 'country')
+                                  .toList()
+                                  .sortedList((e) => e.code)
+                                  .toList();
+                              return SingleChildScrollView(
+                                scrollDirection: Axis.horizontal,
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: List.generate(countryRef.length,
+                                      (countryRefIndex) {
+                                    final countryRefItem =
+                                        countryRef[countryRefIndex];
+                                    return Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          10.0, 0.0, 10.0, 0.0),
+                                      child: InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          _model.selectedCountry =
+                                              countryRefItem.code;
+                                          setState(() {});
+                                        },
+                                        child: Container(
+                                          width: 100.0,
+                                          height: 100.0,
+                                          decoration: BoxDecoration(
+                                            color: _model.selectedCountry ==
+                                                    countryRefItem.code
+                                                ? FlutterFlowTheme.of(context)
+                                                    .tertiary
+                                                : FlutterFlowTheme.of(context)
+                                                    .primaryBackground,
+                                            borderRadius:
+                                                BorderRadius.circular(10.0),
+                                            shape: BoxShape.rectangle,
+                                            border: Border.all(
+                                              color: _model.selectedCountry ==
+                                                      countryRefItem.code
+                                                  ? FlutterFlowTheme.of(context)
+                                                      .primary
+                                                  : FlutterFlowTheme.of(context)
+                                                      .customColor1,
+                                              width: 1.0,
+                                            ),
+                                          ),
+                                          child: Align(
+                                            alignment:
+                                                const AlignmentDirectional(0.0, -1.0),
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.min,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  countryRefItem.desc,
+                                                  textAlign: TextAlign.center,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        fontSize: 25.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w800,
+                                                      ),
+                                                ),
+                                                ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                  child: Image.network(
+                                                    functions.stringToImagePath(
+                                                        countryRefItem.imgUrl)!,
+                                                    width: 80.0,
+                                                    height: 50.0,
+                                                    fit: BoxFit.cover,
+                                                  ),
+                                                ),
+                                              ]
+                                                  .divide(const SizedBox(height: 5.0))
+                                                  .around(
+                                                      const SizedBox(height: 5.0)),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    );
+                                  }),
+                                ),
+                              );
+                            },
+                          ),
+                        ),
+                      ),
+                    ]
+                        .divide(const SizedBox(width: 20.0))
+                        .addToStart(const SizedBox(width: 5.0))
+                        .addToEnd(const SizedBox(width: 5.0)),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
-                  child: wrapWithModel(
-                    model: _model.profileEditMainItemModel2,
-                    updateCallback: () => setState(() {}),
-                    child: ProfileEditMainItemWidget(
-                      itemCode: -1,
-                      itemType: 'govern',
-                      itemLable: 'المدينة',
-                      actionCallBack: (actionReturn) async {},
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            10.0, 0.0, 10.0, 0.0),
+                        child: wrapWithModel(
+                          model: _model.profileEditMainItemModel,
+                          updateCallback: () => setState(() {}),
+                          child: ProfileEditMainItemWidget(
+                            itemCode: _model.selectedCovern!,
+                            itemType: 'cities',
+                            itemLable: 'اخار المدينة',
+                            countryCode: _model.selectedCountry!,
+                            actionCallBack: (actionReturn) async {
+                              _model.selectedCovern = actionReturn;
+                              setState(() {});
+                            },
+                          ),
+                        ),
+                      ),
                     ),
-                  ),
+                  ],
                 ),
               ],
             ),

@@ -8,21 +8,17 @@ import '/backend/schema/util/schema_util.dart';
 import 'index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
-class DtRefTableStruct extends FFFirebaseStruct {
-  DtRefTableStruct({
+class DtRefCitiesStruct extends FFFirebaseStruct {
+  DtRefCitiesStruct({
     String? desc,
     int? lng,
     int? code,
-    String? source,
-    String? imgUrl,
-    int? countryCde,
+    int? countryCode,
     FirestoreUtilData firestoreUtilData = const FirestoreUtilData(),
   })  : _desc = desc,
         _lng = lng,
         _code = code,
-        _source = source,
-        _imgUrl = imgUrl,
-        _countryCde = countryCde,
+        _countryCode = countryCode,
         super(firestoreUtilData);
 
   // "desc" field.
@@ -45,46 +41,30 @@ class DtRefTableStruct extends FFFirebaseStruct {
   void incrementCode(int amount) => _code = code + amount;
   bool hasCode() => _code != null;
 
-  // "source" field.
-  String? _source;
-  String get source => _source ?? '';
-  set source(String? val) => _source = val;
-  bool hasSource() => _source != null;
+  // "country_code" field.
+  int? _countryCode;
+  int get countryCode => _countryCode ?? 0;
+  set countryCode(int? val) => _countryCode = val;
+  void incrementCountryCode(int amount) => _countryCode = countryCode + amount;
+  bool hasCountryCode() => _countryCode != null;
 
-  // "img_url" field.
-  String? _imgUrl;
-  String get imgUrl => _imgUrl ?? '';
-  set imgUrl(String? val) => _imgUrl = val;
-  bool hasImgUrl() => _imgUrl != null;
-
-  // "country_cde" field.
-  int? _countryCde;
-  int get countryCde => _countryCde ?? 0;
-  set countryCde(int? val) => _countryCde = val;
-  void incrementCountryCde(int amount) => _countryCde = countryCde + amount;
-  bool hasCountryCde() => _countryCde != null;
-
-  static DtRefTableStruct fromMap(Map<String, dynamic> data) =>
-      DtRefTableStruct(
+  static DtRefCitiesStruct fromMap(Map<String, dynamic> data) =>
+      DtRefCitiesStruct(
         desc: data['desc'] as String?,
         lng: castToType<int>(data['lng']),
         code: castToType<int>(data['code']),
-        source: data['source'] as String?,
-        imgUrl: data['img_url'] as String?,
-        countryCde: castToType<int>(data['country_cde']),
+        countryCode: castToType<int>(data['country_code']),
       );
 
-  static DtRefTableStruct? maybeFromMap(dynamic data) => data is Map
-      ? DtRefTableStruct.fromMap(data.cast<String, dynamic>())
+  static DtRefCitiesStruct? maybeFromMap(dynamic data) => data is Map
+      ? DtRefCitiesStruct.fromMap(data.cast<String, dynamic>())
       : null;
 
   Map<String, dynamic> toMap() => {
         'desc': _desc,
         'lng': _lng,
         'code': _code,
-        'source': _source,
-        'img_url': _imgUrl,
-        'country_cde': _countryCde,
+        'country_code': _countryCode,
       }.withoutNulls;
 
   @override
@@ -101,22 +81,14 @@ class DtRefTableStruct extends FFFirebaseStruct {
           _code,
           ParamType.int,
         ),
-        'source': serializeParam(
-          _source,
-          ParamType.String,
-        ),
-        'img_url': serializeParam(
-          _imgUrl,
-          ParamType.String,
-        ),
-        'country_cde': serializeParam(
-          _countryCde,
+        'country_code': serializeParam(
+          _countryCode,
           ParamType.int,
         ),
       }.withoutNulls;
 
-  static DtRefTableStruct fromSerializableMap(Map<String, dynamic> data) =>
-      DtRefTableStruct(
+  static DtRefCitiesStruct fromSerializableMap(Map<String, dynamic> data) =>
+      DtRefCitiesStruct(
         desc: deserializeParam(
           data['desc'],
           ParamType.String,
@@ -132,61 +104,44 @@ class DtRefTableStruct extends FFFirebaseStruct {
           ParamType.int,
           false,
         ),
-        source: deserializeParam(
-          data['source'],
-          ParamType.String,
-          false,
-        ),
-        imgUrl: deserializeParam(
-          data['img_url'],
-          ParamType.String,
-          false,
-        ),
-        countryCde: deserializeParam(
-          data['country_cde'],
+        countryCode: deserializeParam(
+          data['country_code'],
           ParamType.int,
           false,
         ),
       );
 
   @override
-  String toString() => 'DtRefTableStruct(${toMap()})';
+  String toString() => 'DtRefCitiesStruct(${toMap()})';
 
   @override
   bool operator ==(Object other) {
-    return other is DtRefTableStruct &&
+    return other is DtRefCitiesStruct &&
         desc == other.desc &&
         lng == other.lng &&
         code == other.code &&
-        source == other.source &&
-        imgUrl == other.imgUrl &&
-        countryCde == other.countryCde;
+        countryCode == other.countryCode;
   }
 
   @override
-  int get hashCode =>
-      const ListEquality().hash([desc, lng, code, source, imgUrl, countryCde]);
+  int get hashCode => const ListEquality().hash([desc, lng, code, countryCode]);
 }
 
-DtRefTableStruct createDtRefTableStruct({
+DtRefCitiesStruct createDtRefCitiesStruct({
   String? desc,
   int? lng,
   int? code,
-  String? source,
-  String? imgUrl,
-  int? countryCde,
+  int? countryCode,
   Map<String, dynamic> fieldValues = const {},
   bool clearUnsetFields = true,
   bool create = false,
   bool delete = false,
 }) =>
-    DtRefTableStruct(
+    DtRefCitiesStruct(
       desc: desc,
       lng: lng,
       code: code,
-      source: source,
-      imgUrl: imgUrl,
-      countryCde: countryCde,
+      countryCode: countryCode,
       firestoreUtilData: FirestoreUtilData(
         clearUnsetFields: clearUnsetFields,
         create: create,
@@ -195,61 +150,64 @@ DtRefTableStruct createDtRefTableStruct({
       ),
     );
 
-DtRefTableStruct? updateDtRefTableStruct(
-  DtRefTableStruct? dtRefTable, {
+DtRefCitiesStruct? updateDtRefCitiesStruct(
+  DtRefCitiesStruct? dtRefCities, {
   bool clearUnsetFields = true,
   bool create = false,
 }) =>
-    dtRefTable
+    dtRefCities
       ?..firestoreUtilData = FirestoreUtilData(
         clearUnsetFields: clearUnsetFields,
         create: create,
       );
 
-void addDtRefTableStructData(
+void addDtRefCitiesStructData(
   Map<String, dynamic> firestoreData,
-  DtRefTableStruct? dtRefTable,
+  DtRefCitiesStruct? dtRefCities,
   String fieldName, [
   bool forFieldValue = false,
 ]) {
   firestoreData.remove(fieldName);
-  if (dtRefTable == null) {
+  if (dtRefCities == null) {
     return;
   }
-  if (dtRefTable.firestoreUtilData.delete) {
+  if (dtRefCities.firestoreUtilData.delete) {
     firestoreData[fieldName] = FieldValue.delete();
     return;
   }
   final clearFields =
-      !forFieldValue && dtRefTable.firestoreUtilData.clearUnsetFields;
+      !forFieldValue && dtRefCities.firestoreUtilData.clearUnsetFields;
   if (clearFields) {
     firestoreData[fieldName] = <String, dynamic>{};
   }
-  final dtRefTableData = getDtRefTableFirestoreData(dtRefTable, forFieldValue);
-  final nestedData = dtRefTableData.map((k, v) => MapEntry('$fieldName.$k', v));
+  final dtRefCitiesData =
+      getDtRefCitiesFirestoreData(dtRefCities, forFieldValue);
+  final nestedData =
+      dtRefCitiesData.map((k, v) => MapEntry('$fieldName.$k', v));
 
-  final mergeFields = dtRefTable.firestoreUtilData.create || clearFields;
+  final mergeFields = dtRefCities.firestoreUtilData.create || clearFields;
   firestoreData
       .addAll(mergeFields ? mergeNestedFields(nestedData) : nestedData);
 }
 
-Map<String, dynamic> getDtRefTableFirestoreData(
-  DtRefTableStruct? dtRefTable, [
+Map<String, dynamic> getDtRefCitiesFirestoreData(
+  DtRefCitiesStruct? dtRefCities, [
   bool forFieldValue = false,
 ]) {
-  if (dtRefTable == null) {
+  if (dtRefCities == null) {
     return {};
   }
-  final firestoreData = mapToFirestore(dtRefTable.toMap());
+  final firestoreData = mapToFirestore(dtRefCities.toMap());
 
   // Add any Firestore field values
-  dtRefTable.firestoreUtilData.fieldValues
+  dtRefCities.firestoreUtilData.fieldValues
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;
 }
 
-List<Map<String, dynamic>> getDtRefTableListFirestoreData(
-  List<DtRefTableStruct>? dtRefTables,
+List<Map<String, dynamic>> getDtRefCitiesListFirestoreData(
+  List<DtRefCitiesStruct>? dtRefCitiess,
 ) =>
-    dtRefTables?.map((e) => getDtRefTableFirestoreData(e, true)).toList() ?? [];
+    dtRefCitiess?.map((e) => getDtRefCitiesFirestoreData(e, true)).toList() ??
+    [];

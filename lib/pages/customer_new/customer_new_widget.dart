@@ -266,6 +266,7 @@ class _CustomerNewWidgetState extends State<CustomerNewWidget> {
                                 itemCode: 3,
                                 itemType: 'country',
                                 itemLable: 'الدولة',
+                                countryCode: 0,
                                 actionCallBack: (actionReturn) async {
                                   _model.nationalityCode = actionReturn;
                                   setState(() {});
@@ -279,6 +280,7 @@ class _CustomerNewWidgetState extends State<CustomerNewWidget> {
                                 itemCode: 45,
                                 itemType: 'age',
                                 itemLable: 'السن',
+                                countryCode: 0,
                                 actionCallBack: (actionReturn) async {
                                   _model.age = actionReturn;
                                   setState(() {});
@@ -292,6 +294,7 @@ class _CustomerNewWidgetState extends State<CustomerNewWidget> {
                                 itemCode: 90,
                                 itemType: 'weight',
                                 itemLable: 'الوزن',
+                                countryCode: 0,
                                 actionCallBack: (actionReturn) async {
                                   _model.weight = actionReturn;
                                   setState(() {});
@@ -305,6 +308,7 @@ class _CustomerNewWidgetState extends State<CustomerNewWidget> {
                                 itemCode: 190,
                                 itemType: 'height',
                                 itemLable: 'الطول',
+                                countryCode: 0,
                                 actionCallBack: (actionReturn) async {
                                   _model.height = actionReturn;
                                   setState(() {});
@@ -318,6 +322,7 @@ class _CustomerNewWidgetState extends State<CustomerNewWidget> {
                                 itemCode: 1,
                                 itemType: 'religion',
                                 itemLable: 'الديانة',
+                                countryCode: 0,
                                 actionCallBack: (actionReturn) async {
                                   _model.religionCode = actionReturn;
                                   setState(() {});
@@ -331,6 +336,7 @@ class _CustomerNewWidgetState extends State<CustomerNewWidget> {
                                 itemCode: 1,
                                 itemType: 'marital_status',
                                 itemLable: 'الحاله',
+                                countryCode: 0,
                                 actionCallBack: (actionReturn) async {
                                   _model.maritalCode = actionReturn;
                                   setState(() {});
@@ -344,6 +350,7 @@ class _CustomerNewWidgetState extends State<CustomerNewWidget> {
                                 itemCode: 1,
                                 itemType: 'readiness\n',
                                 itemLable: 'الاستعداد للزواج',
+                                countryCode: 0,
                                 actionCallBack: (actionReturn) async {
                                   _model.readinessCode = actionReturn;
                                   setState(() {});

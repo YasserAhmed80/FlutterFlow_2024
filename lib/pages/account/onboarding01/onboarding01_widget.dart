@@ -189,58 +189,61 @@ class _Onboarding01WidgetState extends State<Onboarding01Widget>
                       end: const AlignmentDirectional(0, 1.0),
                     ),
                   ),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        width: 207.0,
-                        height: 207.0,
-                        decoration: BoxDecoration(
-                          color: const Color(0x00800080),
-                          image: DecorationImage(
-                            fit: BoxFit.cover,
-                            image: Image.network(
-                              'https://media.gemini.media/img/Medium/2020/10/9/2020_10_9_20_57_58_115.jpg',
-                            ).image,
+                  child: SingleChildScrollView(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          width: 207.0,
+                          height: 207.0,
+                          decoration: BoxDecoration(
+                            color: const Color(0x00800080),
+                            image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: Image.network(
+                                'https://media.gemini.media/img/Medium/2020/10/9/2020_10_9_20_57_58_115.jpg',
+                              ).image,
+                            ),
+                            shape: BoxShape.circle,
                           ),
-                          shape: BoxShape.circle,
+                        ).animateOnPageLoad(
+                            animationsMap['containerOnPageLoadAnimation2']!),
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 44.0, 0.0, 0.0),
+                          child: Text(
+                            FFLocalizations.of(context).getText(
+                              'r49htzye' /* مرحبا بيكم */,
+                            ),
+                            style: FlutterFlowTheme.of(context)
+                                .displaySmall
+                                .override(
+                                  fontFamily: 'Open Sans',
+                                  letterSpacing: 0.0,
+                                ),
+                          ).animateOnPageLoad(
+                              animationsMap['textOnPageLoadAnimation1']!),
                         ),
-                      ).animateOnPageLoad(
-                          animationsMap['containerOnPageLoadAnimation2']!),
-                      Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 44.0, 0.0, 0.0),
-                        child: Text(
-                          FFLocalizations.of(context).getText(
-                            'r49htzye' /* مرحبا بيكم */,
-                          ),
-                          style: FlutterFlowTheme.of(context)
-                              .displaySmall
-                              .override(
-                                fontFamily: 'Open Sans',
-                                letterSpacing: 0.0,
-                              ),
-                        ).animateOnPageLoad(
-                            animationsMap['textOnPageLoadAnimation1']!),
-                      ),
-                      Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            44.0, 8.0, 44.0, 0.0),
-                        child: Text(
-                          FFLocalizations.of(context).getText(
-                            '16xvudm2' /* منصة تعارف آمن بمنهج علمي لتحق... */,
-                          ),
-                          textAlign: TextAlign.center,
-                          style:
-                              FlutterFlowTheme.of(context).labelMedium.override(
-                                    fontFamily: 'Inter',
-                                    letterSpacing: 0.0,
-                                  ),
-                        ).animateOnPageLoad(
-                            animationsMap['textOnPageLoadAnimation2']!),
-                      ),
-                    ],
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              44.0, 8.0, 44.0, 0.0),
+                          child: Text(
+                            FFLocalizations.of(context).getText(
+                              '16xvudm2' /* منصة تعارف آمن بمنهج علمي لتحق... */,
+                            ),
+                            textAlign: TextAlign.center,
+                            style: FlutterFlowTheme.of(context)
+                                .labelMedium
+                                .override(
+                                  fontFamily: 'Inter',
+                                  letterSpacing: 0.0,
+                                ),
+                          ).animateOnPageLoad(
+                              animationsMap['textOnPageLoadAnimation2']!),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ).animateOnPageLoad(

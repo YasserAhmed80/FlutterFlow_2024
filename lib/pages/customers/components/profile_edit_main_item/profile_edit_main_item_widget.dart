@@ -15,12 +15,14 @@ class ProfileEditMainItemWidget extends StatefulWidget {
     required this.itemType,
     required this.itemLable,
     required this.actionCallBack,
-  });
+    int? countryCode,
+  }) : countryCode = countryCode ?? 0;
 
   final int? itemCode;
   final String? itemType;
   final String? itemLable;
   final Future Function(int actionReturn)? actionCallBack;
+  final int countryCode;
 
   @override
   State<ProfileEditMainItemWidget> createState() =>
@@ -78,6 +80,7 @@ class _ProfileEditMainItemWidgetState extends State<ProfileEditMainItemWidget> {
               child: OptionListWidget(
                 dataSource: widget.itemType!,
                 inputICode: _model.selectedCode!,
+                countryCode: widget.countryCode,
               ),
             );
           },
@@ -169,7 +172,8 @@ class _ProfileEditMainItemWidgetState extends State<ProfileEditMainItemWidget> {
                                                 _model.selectedCode,
                                                 FFAppState()
                                                     .appStateRefData
-                                                    .toList())
+                                                    .toList(),
+                                                widget.countryCode)
                                             ?.desc,
                                         'data',
                                       ),

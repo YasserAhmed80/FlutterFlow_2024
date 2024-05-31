@@ -141,7 +141,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '86p1z442': {
       'ar': 'login',
-      'en': 'Home',
+      'en': 'login',
     },
   },
   // Onboarding01
@@ -172,27 +172,27 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'y2zujc0d': {
       'ar': 'Active',
-      'en': '',
+      'en': 'Active',
     },
     'upbe61i7': {
       'ar': 'Yasser, 30',
-      'en': '',
+      'en': 'Yasser, 30',
     },
     'wx05iunk': {
       'ar': 'Cairo, NC, ffff',
-      'en': '',
+      'en': 'Cairo, NC, ffff',
     },
     '6bfv9kgi': {
       'ar': 'معلومات هامه',
-      'en': '',
+      'en': 'important information',
     },
     'oqwu6w02': {
       'ar': 'مواصفاتي',
-      'en': '',
+      'en': 'My specifications',
     },
     'dipl618z': {
       'ar': 'معلومات اخري عني',
-      'en': '',
+      'en': 'Other information about me',
     },
     '7qurox82': {
       'ar': 'Details',
@@ -200,7 +200,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'tfko659o': {
       'ar': 'profile',
-      'en': 'Home',
+      'en': 'profile. profile',
     },
   },
   // profile_new
@@ -381,37 +381,37 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'qno386d6': {
       'ar': 'testing data',
-      'en': '',
+      'en': 'testing data',
     },
     'nw6qu0jq': {
       'ar': 'profile',
-      'en': 'Home',
+      'en': 'profile. profile',
     },
   },
   // profile_images_Edit
   {
     'fruajb77': {
       'ar': 'من فضلك ادخل 5 صور مناسبه',
-      'en': '',
+      'en': 'Please enter 5 suitable photos',
     },
     '5no8ob7k': {
       'ar': 'Shop',
-      'en': '',
+      'en': 'Shop',
     },
   },
   // customer_new_initial
   {
     'uj1y5hi4': {
       'ar': 'السلام عليكم و رحمة الله',
-      'en': '',
+      'en': 'Peace and mercy of God',
     },
     'yqncd4hh': {
       'ar': 'الاسم ',
-      'en': '',
+      'en': 'the name',
     },
     'o8o9bduq': {
       'ar': 'profile',
-      'en': 'Home',
+      'en': 'profile. profile',
     },
   },
   // Miscellaneous
