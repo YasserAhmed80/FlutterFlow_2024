@@ -168,41 +168,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Home',
     },
   },
-  // customer_details
-  {
-    'y2zujc0d': {
-      'ar': 'Active',
-      'en': 'Active',
-    },
-    'upbe61i7': {
-      'ar': 'Yasser, 30',
-      'en': 'Yasser, 30',
-    },
-    'wx05iunk': {
-      'ar': 'Cairo, NC, ffff',
-      'en': 'Cairo, NC, ffff',
-    },
-    '6bfv9kgi': {
-      'ar': 'معلومات هامه',
-      'en': 'important information',
-    },
-    'oqwu6w02': {
-      'ar': 'مواصفاتي',
-      'en': 'My specifications',
-    },
-    'dipl618z': {
-      'ar': 'معلومات اخري عني',
-      'en': 'Other information about me',
-    },
-    '7qurox82': {
-      'ar': 'Details',
-      'en': 'Details',
-    },
-    'tfko659o': {
-      'ar': 'profile',
-      'en': 'profile. profile',
-    },
-  },
   // profile_new
   {
     'v0vn1m81': {
@@ -394,6 +359,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'من فضلك ادخل 5 صور مناسبه',
       'en': 'Please enter 5 suitable photos',
     },
+    '2ve436f4': {
+      'ar': 'Page Title',
+      'en': '',
+    },
     '5no8ob7k': {
       'ar': 'Shop',
       'en': 'Shop',
@@ -412,6 +381,60 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'o8o9bduq': {
       'ar': 'profile',
       'en': 'profile. profile',
+    },
+  },
+  // customer_details
+  {
+    '6f7wc4mx': {
+      'ar': 'Active',
+      'en': 'Active',
+    },
+    'wxv1pul1': {
+      'ar': 'Yasser, 30',
+      'en': 'Yasser, 30',
+    },
+    '1dzo3p2u': {
+      'ar': 'Cairo, NC, ffff',
+      'en': 'Cairo, NC, ffff',
+    },
+    'glwceutd': {
+      'ar': 'معلومات هامه',
+      'en': 'important information',
+    },
+    'gy41ewe2': {
+      'ar': 'مواصفاتي',
+      'en': 'My specifications',
+    },
+    'c0o0v8od': {
+      'ar': 'معلومات اخري عني',
+      'en': 'Other information about me',
+    },
+    'div4ee1b': {
+      'ar': 'Details',
+      'en': 'Details',
+    },
+    'dls517ib': {
+      'ar': 'profile',
+      'en': 'profile. profile',
+    },
+  },
+  // custom_navbar
+  {
+    'mkzsj4l3': {
+      'ar': 'Login',
+      'en': 'Login',
+    },
+    'd1p2r3o3': {
+      'ar': 'Photo',
+      'en': 'Photo',
+    },
+    'z84tndpb': {
+      'ar': 'Delatil',
+      'en': 'Delatil',
+    },
+    '24h0sz5t': {
+      'ar': 'New',
+      'en': 'New',
     },
   },
   // Miscellaneous

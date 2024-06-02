@@ -1,3 +1,4 @@
+import '/components/custom_navbar_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/upload_photo/upload_photo_widget.dart';
 import 'profile_images_edit_widget.dart' show ProfileImagesEditWidget;
@@ -20,15 +21,19 @@ class ProfileImagesEditModel extends FlutterFlowModel<ProfileImagesEditWidget> {
   final unfocusNode = FocusNode();
   // Model for upload_photo component.
   late UploadPhotoModel uploadPhotoModel;
+  // Model for custom_navbar component.
+  late CustomNavbarModel customNavbarModel;
 
   @override
   void initState(BuildContext context) {
     uploadPhotoModel = createModel(context, () => UploadPhotoModel());
+    customNavbarModel = createModel(context, () => CustomNavbarModel());
   }
 
   @override
   void dispose() {
     unfocusNode.dispose();
     uploadPhotoModel.dispose();
+    customNavbarModel.dispose();
   }
 }

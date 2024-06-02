@@ -57,7 +57,7 @@ class _DescripeMeWidgetState extends State<DescripeMeWidget> {
         child: Padding(
           padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
           child: Column(
-            mainAxisSize: MainAxisSize.max,
+            mainAxisSize: MainAxisSize.min,
             children: [
               Row(
                 mainAxisSize: MainAxisSize.max,

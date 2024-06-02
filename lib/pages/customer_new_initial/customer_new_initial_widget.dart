@@ -1,3 +1,4 @@
+import '/components/custom_navbar_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/customers/components/profile_edit_main_item/profile_edit_main_item_widget.dart';
@@ -51,235 +52,265 @@ class _CustomerNewInitialWidgetState extends State<CustomerNewInitialWidget> {
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         body: SafeArea(
           top: true,
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Padding(
-                  padding:
-                      const EdgeInsetsDirectional.fromSTEB(0.0, 100.0, 0.0, 30.0),
-                  child: Text(
-                    FFLocalizations.of(context).getText(
-                      'uj1y5hi4' /* السلام عليكم و رحمة الله */,
+          child: Stack(
+            children: [
+              Column(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 100.0, 0.0, 30.0),
+                    child: Text(
+                      FFLocalizations.of(context).getText(
+                        'uj1y5hi4' /* السلام عليكم و رحمة الله */,
+                      ),
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily: 'Inter',
+                            fontSize: 30.0,
+                            letterSpacing: 0.0,
+                            fontWeight: FontWeight.bold,
+                          ),
                     ),
-                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Inter',
-                          fontSize: 30.0,
-                          letterSpacing: 0.0,
-                          fontWeight: FontWeight.bold,
-                        ),
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
-                  child: TextFormField(
-                    controller: _model.nameTextController,
-                    focusNode: _model.nameFocusNode,
-                    autofocus: true,
-                    obscureText: false,
-                    decoration: InputDecoration(
-                      labelText: FFLocalizations.of(context).getText(
-                        'yqncd4hh' /* الاسم  */,
-                      ),
-                      labelStyle:
-                          FlutterFlowTheme.of(context).labelMedium.override(
-                                fontFamily: 'Inter',
-                                fontSize: 25.0,
-                                letterSpacing: 0.0,
-                              ),
-                      hintStyle:
-                          FlutterFlowTheme.of(context).labelMedium.override(
-                                fontFamily: 'Inter',
-                                letterSpacing: 0.0,
-                              ),
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).alternate,
-                          width: 2.0,
+                  Padding(
+                    padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                    child: TextFormField(
+                      controller: _model.nameTextController,
+                      focusNode: _model.nameFocusNode,
+                      autofocus: true,
+                      obscureText: false,
+                      decoration: InputDecoration(
+                        labelText: FFLocalizations.of(context).getText(
+                          'yqncd4hh' /* الاسم  */,
                         ),
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).primary,
-                          width: 2.0,
+                        labelStyle:
+                            FlutterFlowTheme.of(context).labelMedium.override(
+                                  fontFamily: 'Inter',
+                                  fontSize: 25.0,
+                                  letterSpacing: 0.0,
+                                ),
+                        hintStyle:
+                            FlutterFlowTheme.of(context).labelMedium.override(
+                                  fontFamily: 'Inter',
+                                  letterSpacing: 0.0,
+                                ),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).alternate,
+                            width: 2.0,
+                          ),
+                          borderRadius: BorderRadius.circular(8.0),
                         ),
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                      errorBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).error,
-                          width: 2.0,
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).primary,
+                            width: 2.0,
+                          ),
+                          borderRadius: BorderRadius.circular(8.0),
                         ),
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                      focusedErrorBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).error,
-                          width: 2.0,
+                        errorBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).error,
+                            width: 2.0,
+                          ),
+                          borderRadius: BorderRadius.circular(8.0),
                         ),
-                        borderRadius: BorderRadius.circular(8.0),
+                        focusedErrorBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).error,
+                            width: 2.0,
+                          ),
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
                       ),
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily: 'Inter',
+                            fontSize: 20.0,
+                            letterSpacing: 0.0,
+                            fontWeight: FontWeight.bold,
+                          ),
+                      validator: _model.nameTextControllerValidator
+                          .asValidator(context),
                     ),
-                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Inter',
-                          fontSize: 20.0,
-                          letterSpacing: 0.0,
-                          fontWeight: FontWeight.bold,
-                        ),
-                    validator:
-                        _model.nameTextControllerValidator.asValidator(context),
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Flexible(
-                        child: Align(
-                          alignment: const AlignmentDirectional(0.0, -1.0),
-                          child: Builder(
-                            builder: (context) {
-                              final countryRef = FFAppState()
-                                  .appStateRefData
-                                  .map((e) => e)
-                                  .toList()
-                                  .where((e) => e.source == 'country')
-                                  .toList()
-                                  .sortedList((e) => e.code)
-                                  .toList();
-                              return SingleChildScrollView(
-                                scrollDirection: Axis.horizontal,
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: List.generate(countryRef.length,
-                                      (countryRefIndex) {
-                                    final countryRefItem =
-                                        countryRef[countryRefIndex];
-                                    return Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          10.0, 0.0, 10.0, 0.0),
-                                      child: InkWell(
-                                        splashColor: Colors.transparent,
-                                        focusColor: Colors.transparent,
-                                        hoverColor: Colors.transparent,
-                                        highlightColor: Colors.transparent,
-                                        onTap: () async {
-                                          _model.selectedCountry =
-                                              countryRefItem.code;
-                                          setState(() {});
-                                        },
-                                        child: Container(
-                                          width: 100.0,
-                                          height: 100.0,
-                                          decoration: BoxDecoration(
-                                            color: _model.selectedCountry ==
-                                                    countryRefItem.code
-                                                ? FlutterFlowTheme.of(context)
-                                                    .tertiary
-                                                : FlutterFlowTheme.of(context)
-                                                    .primaryBackground,
-                                            borderRadius:
-                                                BorderRadius.circular(10.0),
-                                            shape: BoxShape.rectangle,
-                                            border: Border.all(
+                  Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Flexible(
+                            child: Align(
+                              alignment: const AlignmentDirectional(0.0, -1.0),
+                              child: Builder(
+                                builder: (context) {
+                                  final countryRef = FFAppState()
+                                      .appStateRefData
+                                      .map((e) => e)
+                                      .toList()
+                                      .where((e) => e.source == 'country')
+                                      .toList()
+                                      .sortedList((e) => e.code)
+                                      .toList();
+                                  return Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: List.generate(countryRef.length,
+                                        (countryRefIndex) {
+                                      final countryRefItem =
+                                          countryRef[countryRefIndex];
+                                      return Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            10.0, 0.0, 10.0, 0.0),
+                                        child: InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            _model.selectedCountry =
+                                                countryRefItem.code;
+                                            setState(() {});
+                                          },
+                                          child: Container(
+                                            width: 100.0,
+                                            height: 100.0,
+                                            decoration: BoxDecoration(
                                               color: _model.selectedCountry ==
                                                       countryRefItem.code
                                                   ? FlutterFlowTheme.of(context)
-                                                      .primary
+                                                      .tertiary
                                                   : FlutterFlowTheme.of(context)
-                                                      .customColor1,
-                                              width: 1.0,
+                                                      .primaryBackground,
+                                              borderRadius:
+                                                  BorderRadius.circular(10.0),
+                                              shape: BoxShape.rectangle,
+                                              border: Border.all(
+                                                color: _model.selectedCountry ==
+                                                        countryRefItem.code
+                                                    ? FlutterFlowTheme.of(
+                                                            context)
+                                                        .primary
+                                                    : FlutterFlowTheme.of(
+                                                            context)
+                                                        .customColor1,
+                                                width: 1.0,
+                                              ),
                                             ),
-                                          ),
-                                          child: Align(
-                                            alignment:
-                                                const AlignmentDirectional(0.0, -1.0),
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.min,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                              children: [
-                                                Text(
-                                                  countryRefItem.desc,
-                                                  textAlign: TextAlign.center,
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        fontSize: 25.0,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.w800,
+                                            child: Align(
+                                              alignment: const AlignmentDirectional(
+                                                  0.0, -1.0),
+                                              child: SingleChildScrollView(
+                                                child: Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.min,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.start,
+                                                  children: [
+                                                    Text(
+                                                      countryRefItem.desc,
+                                                      textAlign:
+                                                          TextAlign.center,
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily: 'Inter',
+                                                            fontSize: 15.0,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.w800,
+                                                          ),
+                                                    ),
+                                                    ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8.0),
+                                                      child: Image.network(
+                                                        functions
+                                                            .stringToImagePath(
+                                                                countryRefItem
+                                                                    .imgUrl)!,
+                                                        width: 80.0,
+                                                        height: 50.0,
+                                                        fit: BoxFit.cover,
                                                       ),
+                                                    ),
+                                                  ]
+                                                      .divide(
+                                                          const SizedBox(height: 5.0))
+                                                      .around(const SizedBox(
+                                                          height: 5.0)),
                                                 ),
-                                                ClipRRect(
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          8.0),
-                                                  child: Image.network(
-                                                    functions.stringToImagePath(
-                                                        countryRefItem.imgUrl)!,
-                                                    width: 80.0,
-                                                    height: 50.0,
-                                                    fit: BoxFit.cover,
-                                                  ),
-                                                ),
-                                              ]
-                                                  .divide(const SizedBox(height: 5.0))
-                                                  .around(
-                                                      const SizedBox(height: 5.0)),
+                                              ),
                                             ),
                                           ),
                                         ),
-                                      ),
-                                    );
-                                  }),
-                                ),
-                              );
-                            },
+                                      );
+                                    }),
+                                  );
+                                },
+                              ),
+                            ),
                           ),
-                        ),
-                      ),
-                    ]
-                        .divide(const SizedBox(width: 20.0))
-                        .addToStart(const SizedBox(width: 5.0))
-                        .addToEnd(const SizedBox(width: 5.0)),
-                  ),
-                ),
-                Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            10.0, 0.0, 10.0, 0.0),
-                        child: wrapWithModel(
-                          model: _model.profileEditMainItemModel,
-                          updateCallback: () => setState(() {}),
-                          child: ProfileEditMainItemWidget(
-                            itemCode: _model.selectedCovern!,
-                            itemType: 'cities',
-                            itemLable: 'اخار المدينة',
-                            countryCode: _model.selectedCountry!,
-                            actionCallBack: (actionReturn) async {
-                              _model.selectedCovern = actionReturn;
-                              setState(() {});
-                            },
-                          ),
-                        ),
+                        ]
+                            .divide(const SizedBox(width: 20.0))
+                            .addToStart(const SizedBox(width: 5.0))
+                            .addToEnd(const SizedBox(width: 5.0)),
                       ),
                     ),
-                  ],
-                ),
-              ],
-            ),
+                  ),
+                  Expanded(
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Expanded(
+                          child: Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                10.0, 20.0, 10.0, 0.0),
+                            child: wrapWithModel(
+                              model: _model.profileEditMainItemModel,
+                              updateCallback: () => setState(() {}),
+                              child: ProfileEditMainItemWidget(
+                                itemCode: _model.selectedCovern!,
+                                itemType: 'cities',
+                                itemLable: 'اخار المدينة',
+                                countryCode: _model.selectedCountry!,
+                                actionCallBack: (actionReturn) async {
+                                  _model.selectedCovern = actionReturn;
+                                  setState(() {});
+                                },
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Expanded(
+                    child: Align(
+                      alignment: const AlignmentDirectional(0.0, 1.0),
+                      child: wrapWithModel(
+                        model: _model.customNavbarModel,
+                        updateCallback: () => setState(() {}),
+                        child: const CustomNavbarWidget(),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
           ),
         ),
       ),

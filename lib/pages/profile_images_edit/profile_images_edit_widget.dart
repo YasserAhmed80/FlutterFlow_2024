@@ -1,4 +1,5 @@
 import '/backend/backend.dart';
+import '/components/custom_navbar_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/public_components/show_photo_from_d_b/show_photo_from_d_b_widget.dart';
@@ -44,95 +45,129 @@ class _ProfileImagesEditWidgetState extends State<ProfileImagesEditWidget> {
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
-        body: SafeArea(
-          top: true,
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              Container(
-                width: double.infinity,
-                height: 40.0,
-                decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
+        appBar: AppBar(
+          backgroundColor: FlutterFlowTheme.of(context).primary,
+          automaticallyImplyLeading: false,
+          title: Text(
+            FFLocalizations.of(context).getText(
+              '2ve436f4' /* Page Title */,
+            ),
+            style: FlutterFlowTheme.of(context).headlineMedium.override(
+                  fontFamily: 'Open Sans',
+                  color: Colors.white,
+                  fontSize: 22.0,
+                  letterSpacing: 0.0,
                 ),
-                child: Text(
-                  FFLocalizations.of(context).getText(
-                    'fruajb77' /* من فضلك ادخل 5 صور مناسبه */,
+          ),
+          actions: const [],
+          centerTitle: false,
+          elevation: 2.0,
+        ),
+        body: Stack(
+          children: [
+            Column(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Container(
+                  width: double.infinity,
+                  height: 40.0,
+                  decoration: BoxDecoration(
+                    color: FlutterFlowTheme.of(context).secondaryBackground,
                   ),
-                  textAlign: TextAlign.center,
-                  style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Inter',
-                        fontSize: 20.0,
-                        letterSpacing: 0.0,
-                        fontWeight: FontWeight.bold,
-                      ),
-                ),
-              ),
-              Container(
-                width: MediaQuery.sizeOf(context).width * 0.9,
-                height: 300.0,
-                decoration: const BoxDecoration(),
-                child: wrapWithModel(
-                  model: _model.uploadPhotoModel,
-                  updateCallback: () => setState(() {}),
-                  child: const UploadPhotoWidget(
-                    storageFolder: 'cus_photos',
+                  child: Text(
+                    FFLocalizations.of(context).getText(
+                      'fruajb77' /* من فضلك ادخل 5 صور مناسبه */,
+                    ),
+                    textAlign: TextAlign.center,
+                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                          fontFamily: 'Inter',
+                          fontSize: 20.0,
+                          letterSpacing: 0.0,
+                          fontWeight: FontWeight.bold,
+                        ),
                   ),
                 ),
-              ),
-              Expanded(
-                child: StreamBuilder<List<CusPhotosRecord>>(
-                  stream: queryCusPhotosRecord(),
-                  builder: (context, snapshot) {
-                    // Customize what your widget looks like when it's loading.
-                    if (!snapshot.hasData) {
-                      return Center(
-                        child: SizedBox(
-                          width: 50.0,
-                          height: 50.0,
-                          child: CircularProgressIndicator(
-                            valueColor: AlwaysStoppedAnimation<Color>(
-                              FlutterFlowTheme.of(context).primary,
+                Container(
+                  width: MediaQuery.sizeOf(context).width * 0.9,
+                  height: 300.0,
+                  decoration: const BoxDecoration(),
+                  child: wrapWithModel(
+                    model: _model.uploadPhotoModel,
+                    updateCallback: () => setState(() {}),
+                    child: const UploadPhotoWidget(
+                      storageFolder: 'cus_photos',
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: StreamBuilder<List<CusPhotosRecord>>(
+                    stream: queryCusPhotosRecord(),
+                    builder: (context, snapshot) {
+                      // Customize what your widget looks like when it's loading.
+                      if (!snapshot.hasData) {
+                        return Center(
+                          child: SizedBox(
+                            width: 50.0,
+                            height: 50.0,
+                            child: CircularProgressIndicator(
+                              valueColor: AlwaysStoppedAnimation<Color>(
+                                FlutterFlowTheme.of(context).primary,
+                              ),
                             ),
                           ),
-                        ),
-                      );
-                    }
-                    List<CusPhotosRecord> gridViewCusPhotosRecordList =
-                        snapshot.data!;
-                    return GridView.builder(
-                      padding: const EdgeInsets.fromLTRB(
-                        0,
-                        5.0,
-                        0,
-                        5.0,
-                      ),
-                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2,
-                        crossAxisSpacing: 5.0,
-                        mainAxisSpacing: 5.0,
-                        childAspectRatio: 1.0,
-                      ),
-                      scrollDirection: Axis.vertical,
-                      itemCount: gridViewCusPhotosRecordList.length,
-                      itemBuilder: (context, gridViewIndex) {
-                        final gridViewCusPhotosRecord =
-                            gridViewCusPhotosRecordList[gridViewIndex];
-                        return Container(
-                          decoration: const BoxDecoration(),
-                          child: ShowPhotoFromDBWidget(
-                            key: Key(
-                                'Keyht5_${gridViewIndex}_of_${gridViewCusPhotosRecordList.length}'),
-                            docRef: gridViewCusPhotosRecord,
-                          ),
                         );
-                      },
-                    );
-                  },
+                      }
+                      List<CusPhotosRecord> gridViewCusPhotosRecordList =
+                          snapshot.data!;
+                      return GridView.builder(
+                        padding: const EdgeInsets.fromLTRB(
+                          0,
+                          5.0,
+                          0,
+                          5.0,
+                        ),
+                        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 2,
+                          crossAxisSpacing: 5.0,
+                          mainAxisSpacing: 5.0,
+                          childAspectRatio: 1.0,
+                        ),
+                        scrollDirection: Axis.vertical,
+                        itemCount: gridViewCusPhotosRecordList.length,
+                        itemBuilder: (context, gridViewIndex) {
+                          final gridViewCusPhotosRecord =
+                              gridViewCusPhotosRecordList[gridViewIndex];
+                          return Container(
+                            decoration: const BoxDecoration(),
+                            child: ShowPhotoFromDBWidget(
+                              key: Key(
+                                  'Keyht5_${gridViewIndex}_of_${gridViewCusPhotosRecordList.length}'),
+                              docRef: gridViewCusPhotosRecord,
+                            ),
+                          );
+                        },
+                      );
+                    },
+                  ),
                 ),
+              ],
+            ),
+            Align(
+              alignment: const AlignmentDirectional(0.0, 1.0),
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Expanded(
+                    child: wrapWithModel(
+                      model: _model.customNavbarModel,
+                      updateCallback: () => setState(() {}),
+                      child: const CustomNavbarWidget(),
+                    ),
+                  ),
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

@@ -75,15 +75,18 @@ class _UploadPhotoWidgetState extends State<UploadPhotoWidget> {
                         width: double.infinity,
                         height: 300.0,
                         decoration: BoxDecoration(
+                          color: FlutterFlowTheme.of(context).secondaryText,
                           borderRadius: BorderRadius.circular(12.0),
                           shape: BoxShape.rectangle,
                           border: Border.all(
-                            color: FlutterFlowTheme.of(context).secondary,
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
                           ),
                         ),
                         child: Icon(
                           Icons.add_a_photo_outlined,
-                          color: FlutterFlowTheme.of(context).secondaryText,
+                          color:
+                              FlutterFlowTheme.of(context).secondaryBackground,
                           size: 150.0,
                         ),
                       ),
@@ -99,7 +102,8 @@ class _UploadPhotoWidgetState extends State<UploadPhotoWidget> {
                           borderRadius: BorderRadius.circular(12.0),
                           shape: BoxShape.rectangle,
                           border: Border.all(
-                            color: FlutterFlowTheme.of(context).secondary,
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
                           ),
                         ),
                         child: AuthUserStreamWidget(

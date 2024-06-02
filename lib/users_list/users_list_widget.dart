@@ -220,6 +220,7 @@ class _UsersListWidgetState extends State<UsersListWidget>
                         controller: _model.tabBarController,
                         children: [
                           SingleChildScrollView(
+                            primary: false,
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               children: [
@@ -504,6 +505,7 @@ class _UsersListWidgetState extends State<UsersListWidget>
                             ),
                           ),
                           SingleChildScrollView(
+                            primary: false,
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               children: [
@@ -788,6 +790,7 @@ class _UsersListWidgetState extends State<UsersListWidget>
                             ),
                           ),
                           SingleChildScrollView(
+                            primary: false,
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               children: [

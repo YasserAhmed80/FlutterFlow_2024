@@ -1,3 +1,4 @@
+import '/components/custom_navbar_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -80,326 +81,347 @@ class _CustomerNewWidgetState extends State<CustomerNewWidget> {
         ),
         body: SafeArea(
           top: true,
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                Align(
-                  alignment: const AlignmentDirectional(0.0, -1.0),
-                  child: Stack(
-                    alignment: const AlignmentDirectional(-0.0, 1.0),
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(8.0),
-                        child: Image.network(
-                          'https://www.travelandleisure.com/thmb/hm1djoflREA9IsW5rIGwrAGCxbQ=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/TAL-wild-dunes-BEACHWEDHOTEL1223-c4aed295aa9d413bbad9cc911e8c65d5.jpg',
-                          width: double.infinity,
-                          height: 330.0,
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                      const Align(
-                        alignment: AlignmentDirectional(0.0, 1.0),
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              16.0, 0.0, 16.0, 30.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [],
-                          ),
-                        ),
-                      ),
-                      Container(
-                        width: 60.0,
-                        height: 60.0,
-                        decoration: BoxDecoration(
-                          color: const Color(0x21800080),
-                          shape: BoxShape.circle,
-                          border: Border.all(
-                            width: 1.0,
-                          ),
-                        ),
-                        child: Icon(
-                          Icons.add,
-                          color: FlutterFlowTheme.of(context).primary,
-                          size: 50.0,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Opacity(
-                  opacity: 0.9,
-                  child: Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 20.0),
-                    child: SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Column(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Text(
-                                FFLocalizations.of(context).getText(
-                                  'qno386d6' /* testing data */,
-                                ),
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Inter',
-                                      fontSize: 20.0,
-                                      letterSpacing: 0.0,
-                                      fontWeight: FontWeight.w800,
-                                    ),
-                              ),
-                              Text(
-                                valueOrDefault<String>(
-                                  _model.nationalityCode?.toString(),
-                                  '1',
-                                ),
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Inter',
-                                      letterSpacing: 0.0,
-                                    ),
-                              ),
-                              Text(
-                                valueOrDefault<String>(
-                                  _model.age?.toString(),
-                                  '4',
-                                ),
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Inter',
-                                      letterSpacing: 0.0,
-                                    ),
-                              ),
-                              Text(
-                                valueOrDefault<String>(
-                                  _model.weight?.toString(),
-                                  '4',
-                                ),
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Inter',
-                                      letterSpacing: 0.0,
-                                    ),
-                              ),
-                              Text(
-                                valueOrDefault<String>(
-                                  _model.height?.toString(),
-                                  '4',
-                                ),
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Inter',
-                                      letterSpacing: 0.0,
-                                    ),
-                              ),
-                              Text(
-                                valueOrDefault<String>(
-                                  _model.religionCode?.toString(),
-                                  '4',
-                                ),
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Inter',
-                                      letterSpacing: 0.0,
-                                    ),
-                              ),
-                              Text(
-                                valueOrDefault<String>(
-                                  _model.maritalCode?.toString(),
-                                  '4',
-                                ),
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Inter',
-                                      letterSpacing: 0.0,
-                                    ),
-                              ),
-                              Text(
-                                valueOrDefault<String>(
-                                  _model.readinessCode?.toString(),
-                                  'f',
-                                ),
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Inter',
-                                      letterSpacing: 0.0,
-                                    ),
-                              ),
-                            ],
-                          ),
-                        ]
-                            .divide(const SizedBox(width: 2.0))
-                            .around(const SizedBox(width: 2.0)),
-                      ),
-                    ),
-                  ),
-                ),
-                Row(
+          child: Stack(
+            children: [
+              SingleChildScrollView(
+                primary: false,
+                child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    Expanded(
+                    Align(
+                      alignment: const AlignmentDirectional(0.0, -1.0),
+                      child: Stack(
+                        alignment: const AlignmentDirectional(-0.0, 1.0),
+                        children: [
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(8.0),
+                            child: Image.network(
+                              'https://www.travelandleisure.com/thmb/hm1djoflREA9IsW5rIGwrAGCxbQ=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/TAL-wild-dunes-BEACHWEDHOTEL1223-c4aed295aa9d413bbad9cc911e8c65d5.jpg',
+                              width: double.infinity,
+                              height: 330.0,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          const Align(
+                            alignment: AlignmentDirectional(0.0, 1.0),
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  16.0, 0.0, 16.0, 30.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                children: [],
+                              ),
+                            ),
+                          ),
+                          Container(
+                            width: 60.0,
+                            height: 60.0,
+                            decoration: BoxDecoration(
+                              color: const Color(0x21800080),
+                              shape: BoxShape.circle,
+                              border: Border.all(
+                                width: 1.0,
+                              ),
+                            ),
+                            child: Icon(
+                              Icons.add,
+                              color: FlutterFlowTheme.of(context).primary,
+                              size: 50.0,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Opacity(
+                      opacity: 0.9,
                       child: Padding(
                         padding: const EdgeInsetsDirectional.fromSTEB(
-                            10.0, 0.0, 10.0, 0.0),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            wrapWithModel(
-                              model: _model.profileEditMainItemModel1,
-                              updateCallback: () => setState(() {}),
-                              child: ProfileEditMainItemWidget(
-                                itemCode: 3,
-                                itemType: 'country',
-                                itemLable: 'الدولة',
-                                countryCode: 0,
-                                actionCallBack: (actionReturn) async {
-                                  _model.nationalityCode = actionReturn;
-                                  setState(() {});
-                                },
+                            0.0, 20.0, 0.0, 20.0),
+                        child: SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      'qno386d6' /* testing data */,
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Inter',
+                                          fontSize: 20.0,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w800,
+                                        ),
+                                  ),
+                                  Text(
+                                    valueOrDefault<String>(
+                                      _model.nationalityCode?.toString(),
+                                      '1',
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Inter',
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                  Text(
+                                    valueOrDefault<String>(
+                                      _model.age?.toString(),
+                                      '4',
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Inter',
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                  Text(
+                                    valueOrDefault<String>(
+                                      _model.weight?.toString(),
+                                      '4',
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Inter',
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                  Text(
+                                    valueOrDefault<String>(
+                                      _model.height?.toString(),
+                                      '4',
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Inter',
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                  Text(
+                                    valueOrDefault<String>(
+                                      _model.religionCode?.toString(),
+                                      '4',
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Inter',
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                  Text(
+                                    valueOrDefault<String>(
+                                      _model.maritalCode?.toString(),
+                                      '4',
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Inter',
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                  Text(
+                                    valueOrDefault<String>(
+                                      _model.readinessCode?.toString(),
+                                      'f',
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Inter',
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                ],
                               ),
-                            ),
-                            wrapWithModel(
-                              model: _model.profileEditMainItemModel2,
-                              updateCallback: () => setState(() {}),
-                              child: ProfileEditMainItemWidget(
-                                itemCode: 45,
-                                itemType: 'age',
-                                itemLable: 'السن',
-                                countryCode: 0,
-                                actionCallBack: (actionReturn) async {
-                                  _model.age = actionReturn;
-                                  setState(() {});
-                                },
-                              ),
-                            ),
-                            wrapWithModel(
-                              model: _model.profileEditMainItemModel3,
-                              updateCallback: () => setState(() {}),
-                              child: ProfileEditMainItemWidget(
-                                itemCode: 90,
-                                itemType: 'weight',
-                                itemLable: 'الوزن',
-                                countryCode: 0,
-                                actionCallBack: (actionReturn) async {
-                                  _model.weight = actionReturn;
-                                  setState(() {});
-                                },
-                              ),
-                            ),
-                            wrapWithModel(
-                              model: _model.profileEditMainItemModel4,
-                              updateCallback: () => setState(() {}),
-                              child: ProfileEditMainItemWidget(
-                                itemCode: 190,
-                                itemType: 'height',
-                                itemLable: 'الطول',
-                                countryCode: 0,
-                                actionCallBack: (actionReturn) async {
-                                  _model.height = actionReturn;
-                                  setState(() {});
-                                },
-                              ),
-                            ),
-                            wrapWithModel(
-                              model: _model.profileEditMainItemModel5,
-                              updateCallback: () => setState(() {}),
-                              child: ProfileEditMainItemWidget(
-                                itemCode: 1,
-                                itemType: 'religion',
-                                itemLable: 'الديانة',
-                                countryCode: 0,
-                                actionCallBack: (actionReturn) async {
-                                  _model.religionCode = actionReturn;
-                                  setState(() {});
-                                },
-                              ),
-                            ),
-                            wrapWithModel(
-                              model: _model.profileEditMainItemModel6,
-                              updateCallback: () => setState(() {}),
-                              child: ProfileEditMainItemWidget(
-                                itemCode: 1,
-                                itemType: 'marital_status',
-                                itemLable: 'الحاله',
-                                countryCode: 0,
-                                actionCallBack: (actionReturn) async {
-                                  _model.maritalCode = actionReturn;
-                                  setState(() {});
-                                },
-                              ),
-                            ),
-                            wrapWithModel(
-                              model: _model.profileEditMainItemModel7,
-                              updateCallback: () => setState(() {}),
-                              child: ProfileEditMainItemWidget(
-                                itemCode: 1,
-                                itemType: 'readiness\n',
-                                itemLable: 'الاستعداد للزواج',
-                                countryCode: 0,
-                                actionCallBack: (actionReturn) async {
-                                  _model.readinessCode = actionReturn;
-                                  setState(() {});
-                                },
-                              ),
-                            ),
-                          ]
-                              .divide(const SizedBox(height: 10.0))
-                              .addToStart(const SizedBox(height: 5.0))
-                              .addToEnd(const SizedBox(height: 5.0)),
+                            ]
+                                .divide(const SizedBox(width: 2.0))
+                                .around(const SizedBox(width: 2.0)),
+                          ),
                         ),
+                      ),
+                    ),
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Expanded(
+                          child: Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                10.0, 0.0, 10.0, 0.0),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                wrapWithModel(
+                                  model: _model.profileEditMainItemModel1,
+                                  updateCallback: () => setState(() {}),
+                                  child: ProfileEditMainItemWidget(
+                                    itemCode: 3,
+                                    itemType: 'country',
+                                    itemLable: 'الدولة',
+                                    countryCode: 0,
+                                    actionCallBack: (actionReturn) async {
+                                      _model.nationalityCode = actionReturn;
+                                      setState(() {});
+                                    },
+                                  ),
+                                ),
+                                wrapWithModel(
+                                  model: _model.profileEditMainItemModel2,
+                                  updateCallback: () => setState(() {}),
+                                  child: ProfileEditMainItemWidget(
+                                    itemCode: 45,
+                                    itemType: 'age',
+                                    itemLable: 'السن',
+                                    countryCode: 0,
+                                    actionCallBack: (actionReturn) async {
+                                      _model.age = actionReturn;
+                                      setState(() {});
+                                    },
+                                  ),
+                                ),
+                                wrapWithModel(
+                                  model: _model.profileEditMainItemModel3,
+                                  updateCallback: () => setState(() {}),
+                                  child: ProfileEditMainItemWidget(
+                                    itemCode: 90,
+                                    itemType: 'weight',
+                                    itemLable: 'الوزن',
+                                    countryCode: 0,
+                                    actionCallBack: (actionReturn) async {
+                                      _model.weight = actionReturn;
+                                      setState(() {});
+                                    },
+                                  ),
+                                ),
+                                wrapWithModel(
+                                  model: _model.profileEditMainItemModel4,
+                                  updateCallback: () => setState(() {}),
+                                  child: ProfileEditMainItemWidget(
+                                    itemCode: 190,
+                                    itemType: 'height',
+                                    itemLable: 'الطول',
+                                    countryCode: 0,
+                                    actionCallBack: (actionReturn) async {
+                                      _model.height = actionReturn;
+                                      setState(() {});
+                                    },
+                                  ),
+                                ),
+                                wrapWithModel(
+                                  model: _model.profileEditMainItemModel5,
+                                  updateCallback: () => setState(() {}),
+                                  child: ProfileEditMainItemWidget(
+                                    itemCode: 1,
+                                    itemType: 'religion',
+                                    itemLable: 'الديانة',
+                                    countryCode: 0,
+                                    actionCallBack: (actionReturn) async {
+                                      _model.religionCode = actionReturn;
+                                      setState(() {});
+                                    },
+                                  ),
+                                ),
+                                wrapWithModel(
+                                  model: _model.profileEditMainItemModel6,
+                                  updateCallback: () => setState(() {}),
+                                  child: ProfileEditMainItemWidget(
+                                    itemCode: 1,
+                                    itemType: 'marital_status',
+                                    itemLable: 'الحاله',
+                                    countryCode: 0,
+                                    actionCallBack: (actionReturn) async {
+                                      _model.maritalCode = actionReturn;
+                                      setState(() {});
+                                    },
+                                  ),
+                                ),
+                                wrapWithModel(
+                                  model: _model.profileEditMainItemModel7,
+                                  updateCallback: () => setState(() {}),
+                                  child: ProfileEditMainItemWidget(
+                                    itemCode: 1,
+                                    itemType: 'readiness\n',
+                                    itemLable: 'الاستعداد للزواج',
+                                    countryCode: 0,
+                                    actionCallBack: (actionReturn) async {
+                                      _model.readinessCode = actionReturn;
+                                      setState(() {});
+                                    },
+                                  ),
+                                ),
+                              ]
+                                  .divide(const SizedBox(height: 10.0))
+                                  .addToStart(const SizedBox(height: 5.0))
+                                  .addToEnd(const SizedBox(height: 5.0)),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Expanded(
+                            child: SingleChildScrollView(
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Expanded(
+                                        child: Container(
+                                          width: 100.0,
+                                          height: 100.0,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryBackground,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ],
                 ),
-                Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Expanded(
-                        child: SingleChildScrollView(
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Expanded(
-                                    child: Container(
-                                      width: 100.0,
-                                      height: 100.0,
-                                      decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
+              ),
+              Align(
+                alignment: const AlignmentDirectional(0.0, 1.0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Expanded(
+                      child: wrapWithModel(
+                        model: _model.customNavbarModel,
+                        updateCallback: () => setState(() {}),
+                        child: const CustomNavbarWidget(),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

@@ -1,3 +1,4 @@
+import '/components/custom_navbar_widget.dart';
 import '/components/profile_essential_item_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/customers/components/about_me_item/about_me_item_widget.dart';
@@ -44,6 +45,8 @@ class CustomerDetailsModel extends FlutterFlowModel<CustomerDetailsWidget> {
   late AboutMeItemModel aboutMeItemModel3;
   // Model for about_me_item component.
   late AboutMeItemModel aboutMeItemModel4;
+  // Model for custom_navbar component.
+  late CustomNavbarModel customNavbarModel;
 
   @override
   void initState(BuildContext context) {
@@ -72,6 +75,7 @@ class CustomerDetailsModel extends FlutterFlowModel<CustomerDetailsWidget> {
     aboutMeItemModel2 = createModel(context, () => AboutMeItemModel());
     aboutMeItemModel3 = createModel(context, () => AboutMeItemModel());
     aboutMeItemModel4 = createModel(context, () => AboutMeItemModel());
+    customNavbarModel = createModel(context, () => CustomNavbarModel());
   }
 
   @override
@@ -94,5 +98,6 @@ class CustomerDetailsModel extends FlutterFlowModel<CustomerDetailsWidget> {
     aboutMeItemModel2.dispose();
     aboutMeItemModel3.dispose();
     aboutMeItemModel4.dispose();
+    customNavbarModel.dispose();
   }
 }

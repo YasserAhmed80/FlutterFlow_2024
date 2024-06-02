@@ -8,7 +8,6 @@ import '/backend/schema/structs/index.dart';
 import '/auth/base_auth_user_provider.dart';
 
 import '/index.dart';
-import '/main.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
@@ -74,33 +73,26 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
-      errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? const NavBarPage() : const ProfileImagesEditWidget(),
+      errorBuilder: (context, state) => appStateNotifier.loggedIn
+          ? const CustomerNewWidget()
+          : const CustomerDetailsWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) => appStateNotifier.loggedIn
-              ? const NavBarPage()
-              : const ProfileImagesEditWidget(),
+              ? const CustomerNewWidget()
+              : const CustomerDetailsWidget(),
         ),
         FFRoute(
           name: 'login',
           path: '/login',
-          builder: (context, params) =>
-              params.isEmpty ? const NavBarPage(initialPage: 'login') : const LoginWidget(),
+          builder: (context, params) => const LoginWidget(),
         ),
         FFRoute(
           name: 'Onboarding01',
           path: '/onboarding01',
           builder: (context, params) => const Onboarding01Widget(),
-        ),
-        FFRoute(
-          name: 'customer_details',
-          path: '/customer_details',
-          builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'customer_details')
-              : const CustomerDetailsWidget(),
         ),
         FFRoute(
           name: 'profile_new',
@@ -115,23 +107,22 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'customer_new',
           path: '/customer_new',
-          builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'customer_new')
-              : const CustomerNewWidget(),
+          builder: (context, params) => const CustomerNewWidget(),
         ),
         FFRoute(
           name: 'profile_images_Edit',
           path: '/profileImagesEdit',
-          builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'profile_images_Edit')
-              : const ProfileImagesEditWidget(),
+          builder: (context, params) => const ProfileImagesEditWidget(),
         ),
         FFRoute(
           name: 'customer_new_initial',
           path: '/customer_new_initial',
-          builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'customer_new_initial')
-              : const CustomerNewInitialWidget(),
+          builder: (context, params) => const CustomerNewInitialWidget(),
+        ),
+        FFRoute(
+          name: 'customer_details',
+          path: '/customer_details',
+          builder: (context, params) => const CustomerDetailsWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -304,7 +295,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/profileImagesEdit';
+            return '/customer_details';
           }
           return null;
         },
