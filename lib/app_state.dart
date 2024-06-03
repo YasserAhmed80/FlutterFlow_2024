@@ -145,6 +145,12 @@ class FFAppState extends ChangeNotifier {
   void insertAtIndexInRefCities(int index, DtRefCitiesStruct value) {
     _refCities.insert(index, value);
   }
+
+  int _selectedNavTab = 0;
+  int get selectedNavTab => _selectedNavTab;
+  set selectedNavTab(int value) {
+    _selectedNavTab = value;
+  }
 }
 
 void _safeInit(Function() initializeField) {

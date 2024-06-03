@@ -1,7 +1,8 @@
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'custom_navbar_model.dart';
 export 'custom_navbar_model.dart';
 
@@ -38,126 +39,160 @@ class _CustomNavbarWidgetState extends State<CustomNavbarWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 5.0, 5.0),
-      child: Container(
-        height: 80.0,
-        decoration: BoxDecoration(
-          color: FlutterFlowTheme.of(context).primaryBackground,
-          borderRadius: BorderRadius.circular(10.0),
-        ),
-        child: Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
-          child: Row(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              FFButtonWidget(
-                onPressed: () async {
-                  context.pushNamed('customer_new_initial');
-                },
-                text: FFLocalizations.of(context).getText(
-                  'mkzsj4l3' /* Login */,
-                ),
-                options: FFButtonOptions(
-                  height: 40.0,
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                  iconPadding:
-                      const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                  color: FlutterFlowTheme.of(context).primaryBackground,
-                  textStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                        fontFamily: 'Inter',
-                        color: FlutterFlowTheme.of(context).primary,
-                        letterSpacing: 0.0,
-                        fontWeight: FontWeight.w500,
-                      ),
-                  elevation: 0.0,
-                  borderSide: const BorderSide(
-                    width: 1.0,
-                  ),
-                  borderRadius: BorderRadius.circular(6.0),
-                ),
+    context.watch<FFAppState>();
+
+    return Container(
+      height: 80.0,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10.0),
+      ),
+      child: Padding(
+        padding: const EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
+        child: Row(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            FlutterFlowIconButton(
+              borderColor: FFAppState().selectedNavTab == 1
+                  ? FlutterFlowTheme.of(context).primary
+                  : FlutterFlowTheme.of(context).primaryBackground,
+              borderRadius: 20.0,
+              borderWidth: 0.5,
+              buttonSize: 40.0,
+              fillColor: FlutterFlowTheme.of(context).primaryBackground,
+              icon: Icon(
+                Icons.select_all_outlined,
+                color: FlutterFlowTheme.of(context).primary,
+                size: 24.0,
               ),
-              FFButtonWidget(
-                onPressed: () async {
-                  context.pushNamed('profile_images_Edit');
-                },
-                text: FFLocalizations.of(context).getText(
-                  'd1p2r3o3' /* Photo */,
-                ),
-                options: FFButtonOptions(
-                  height: 40.0,
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                  iconPadding:
-                      const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                  color: FlutterFlowTheme.of(context).primaryBackground,
-                  textStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                        fontFamily: 'Inter',
-                        color: FlutterFlowTheme.of(context).primary,
-                        letterSpacing: 0.0,
-                        fontWeight: FontWeight.w500,
-                      ),
-                  elevation: 0.0,
-                  borderSide: const BorderSide(
-                    width: 1.0,
-                  ),
-                  borderRadius: BorderRadius.circular(6.0),
-                ),
+              onPressed: () async {
+                context.pushNamed(
+                  'customer_new_initial',
+                  extra: <String, dynamic>{
+                    kTransitionInfoKey: const TransitionInfo(
+                      hasTransition: true,
+                      transitionType: PageTransitionType.fade,
+                    ),
+                  },
+                );
+
+                FFAppState().selectedNavTab = 1;
+                setState(() {});
+              },
+            ),
+            FlutterFlowIconButton(
+              borderColor: FFAppState().selectedNavTab == 2
+                  ? FlutterFlowTheme.of(context).primary
+                  : FlutterFlowTheme.of(context).primaryBackground,
+              borderRadius: 20.0,
+              borderWidth: 0.5,
+              buttonSize: 40.0,
+              fillColor: FlutterFlowTheme.of(context).primaryBackground,
+              icon: Icon(
+                Icons.favorite_border,
+                color: FlutterFlowTheme.of(context).primary,
+                size: 24.0,
               ),
-              FFButtonWidget(
-                onPressed: () async {
-                  context.pushNamed('customer_details');
-                },
-                text: FFLocalizations.of(context).getText(
-                  'z84tndpb' /* Delatil */,
-                ),
-                options: FFButtonOptions(
-                  height: 40.0,
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                  iconPadding:
-                      const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                  color: FlutterFlowTheme.of(context).primaryBackground,
-                  textStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                        fontFamily: 'Inter',
-                        color: FlutterFlowTheme.of(context).primary,
-                        letterSpacing: 0.0,
-                        fontWeight: FontWeight.w500,
-                      ),
-                  elevation: 0.0,
-                  borderSide: const BorderSide(
-                    width: 1.0,
-                  ),
-                  borderRadius: BorderRadius.circular(6.0),
-                ),
+              onPressed: () async {
+                context.pushNamed(
+                  'profile_images_Edit',
+                  extra: <String, dynamic>{
+                    kTransitionInfoKey: const TransitionInfo(
+                      hasTransition: true,
+                      transitionType: PageTransitionType.fade,
+                    ),
+                  },
+                );
+
+                FFAppState().selectedNavTab = 2;
+                setState(() {});
+              },
+            ),
+            FlutterFlowIconButton(
+              borderColor: FFAppState().selectedNavTab == 3
+                  ? FlutterFlowTheme.of(context).primary
+                  : FlutterFlowTheme.of(context).primaryBackground,
+              borderRadius: 20.0,
+              borderWidth: 0.5,
+              buttonSize: 40.0,
+              fillColor: FlutterFlowTheme.of(context).primaryBackground,
+              icon: Icon(
+                Icons.chat_bubble_outline_sharp,
+                color: FlutterFlowTheme.of(context).primary,
+                size: 24.0,
               ),
-              FFButtonWidget(
-                onPressed: () async {
-                  context.pushNamed('customer_new');
-                },
-                text: FFLocalizations.of(context).getText(
-                  '24h0sz5t' /* New */,
-                ),
-                options: FFButtonOptions(
-                  height: 40.0,
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                  iconPadding:
-                      const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                  color: FlutterFlowTheme.of(context).primaryBackground,
-                  textStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                        fontFamily: 'Inter',
-                        color: FlutterFlowTheme.of(context).primary,
-                        letterSpacing: 0.0,
-                        fontWeight: FontWeight.w500,
-                      ),
-                  elevation: 0.0,
-                  borderSide: const BorderSide(
-                    width: 1.0,
-                  ),
-                  borderRadius: BorderRadius.circular(6.0),
-                ),
+              onPressed: () async {
+                context.pushNamed(
+                  'customer_details',
+                  extra: <String, dynamic>{
+                    kTransitionInfoKey: const TransitionInfo(
+                      hasTransition: true,
+                      transitionType: PageTransitionType.fade,
+                    ),
+                  },
+                );
+
+                FFAppState().selectedNavTab = 3;
+                setState(() {});
+              },
+            ),
+            FlutterFlowIconButton(
+              borderColor: FFAppState().selectedNavTab == 4
+                  ? FlutterFlowTheme.of(context).primary
+                  : FlutterFlowTheme.of(context).primaryBackground,
+              borderRadius: 20.0,
+              borderWidth: 0.5,
+              buttonSize: 40.0,
+              fillColor: FlutterFlowTheme.of(context).primaryBackground,
+              icon: Icon(
+                Icons.account_circle_outlined,
+                color: FlutterFlowTheme.of(context).primary,
+                size: 24.0,
               ),
-            ].divide(const SizedBox(width: 5.0)).around(const SizedBox(width: 5.0)),
-          ),
+              onPressed: () async {
+                context.pushNamed(
+                  'customer_new',
+                  extra: <String, dynamic>{
+                    kTransitionInfoKey: const TransitionInfo(
+                      hasTransition: true,
+                      transitionType: PageTransitionType.fade,
+                    ),
+                  },
+                );
+
+                FFAppState().selectedNavTab = 4;
+                setState(() {});
+              },
+            ),
+            FlutterFlowIconButton(
+              borderColor: FFAppState().selectedNavTab == 5
+                  ? FlutterFlowTheme.of(context).primary
+                  : FlutterFlowTheme.of(context).primaryBackground,
+              borderRadius: 20.0,
+              borderWidth: 0.5,
+              buttonSize: 40.0,
+              fillColor: FlutterFlowTheme.of(context).primaryBackground,
+              icon: Icon(
+                Icons.settings_sharp,
+                color: FlutterFlowTheme.of(context).primary,
+                size: 24.0,
+              ),
+              onPressed: () async {
+                context.pushNamed(
+                  'appSettings',
+                  extra: <String, dynamic>{
+                    kTransitionInfoKey: const TransitionInfo(
+                      hasTransition: true,
+                      transitionType: PageTransitionType.fade,
+                    ),
+                  },
+                );
+
+                FFAppState().selectedNavTab = 5;
+                setState(() {});
+              },
+            ),
+          ].divide(const SizedBox(width: 5.0)).around(const SizedBox(width: 5.0)),
         ),
       ),
     );

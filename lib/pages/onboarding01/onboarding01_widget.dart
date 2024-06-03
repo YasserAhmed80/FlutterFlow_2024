@@ -3,7 +3,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'onboarding01_model.dart';
 export 'onboarding01_model.dart';
@@ -27,11 +26,6 @@ class _Onboarding01WidgetState extends State<Onboarding01Widget>
   void initState() {
     super.initState();
     _model = createModel(context, () => Onboarding01Model());
-
-    // On page load action.
-    SchedulerBinding.instance.addPostFrameCallback((_) async {
-      setAppLanguage(context, 'ar');
-    });
 
     animationsMap.addAll({
       'containerOnPageLoadAnimation1': AnimationInfo(
@@ -166,8 +160,8 @@ class _Onboarding01WidgetState extends State<Onboarding01Widget>
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
-                      FlutterFlowTheme.of(context).primary,
-                      FlutterFlowTheme.of(context).error,
+                      const Color(0xFFE0CFE0),
+                      const Color(0xFFC0ADB3),
                       FlutterFlowTheme.of(context).tertiary
                     ],
                     stops: const [0.0, 0.5, 1.0],
@@ -178,15 +172,12 @@ class _Onboarding01WidgetState extends State<Onboarding01Widget>
                 child: Container(
                   width: 100.0,
                   height: 100.0,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     gradient: LinearGradient(
-                      colors: [
-                        const Color(0x00FFFFFF),
-                        FlutterFlowTheme.of(context).secondaryBackground
-                      ],
-                      stops: const [0.0, 1.0],
-                      begin: const AlignmentDirectional(0.0, -1.0),
-                      end: const AlignmentDirectional(0, 1.0),
+                      colors: [Color(0x00FFFFFF), Colors.white],
+                      stops: [0.0, 1.0],
+                      begin: AlignmentDirectional(0.0, -1.0),
+                      end: AlignmentDirectional(0, 1.0),
                     ),
                   ),
                   child: SingleChildScrollView(
@@ -194,21 +185,25 @@ class _Onboarding01WidgetState extends State<Onboarding01Widget>
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Container(
-                          width: 207.0,
-                          height: 207.0,
-                          decoration: BoxDecoration(
-                            color: const Color(0x00800080),
-                            image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: Image.network(
-                                'https://media.gemini.media/img/Medium/2020/10/9/2020_10_9_20_57_58_115.jpg',
-                              ).image,
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 30.0, 0.0, 0.0),
+                          child: Container(
+                            width: 207.0,
+                            height: 207.0,
+                            decoration: BoxDecoration(
+                              color: const Color(0x00800080),
+                              image: DecorationImage(
+                                fit: BoxFit.cover,
+                                image: Image.network(
+                                  'https://media.gemini.media/img/Medium/2020/10/9/2020_10_9_20_57_58_115.jpg',
+                                ).image,
+                              ),
+                              shape: BoxShape.circle,
                             ),
-                            shape: BoxShape.circle,
-                          ),
-                        ).animateOnPageLoad(
-                            animationsMap['containerOnPageLoadAnimation2']!),
+                          ).animateOnPageLoad(
+                              animationsMap['containerOnPageLoadAnimation2']!),
+                        ),
                         Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 44.0, 0.0, 0.0),

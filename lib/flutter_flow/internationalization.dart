@@ -168,61 +168,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Home',
     },
   },
-  // profile_new
-  {
-    'v0vn1m81': {
-      'ar': 'Joy Augustin',
-      'en': 'Joy Augustin',
-    },
-    '27wm52uw': {
-      'ar': 'joy@augustin.com',
-      'en': 'joy@augustin.com',
-    },
-    '5ara4gux': {
-      'ar': 'Account',
-      'en': 'Account',
-    },
-    '21y6tm3u': {
-      'ar': 'Payment Options',
-      'en': 'PaymentOptions',
-    },
-    '23rtwyv7': {
-      'ar': 'Country',
-      'en': 'Country',
-    },
-    'p7p3g02q': {
-      'ar': 'Notification Settings',
-      'en': 'Notification Settings',
-    },
-    'b0k3g0q6': {
-      'ar': 'Edit Profile',
-      'en': 'Edit Profile',
-    },
-    '17c7adrx': {
-      'ar': 'General',
-      'en': 'General',
-    },
-    '7fe6lzkv': {
-      'ar': 'Support',
-      'en': 'Support',
-    },
-    'lw4kpm64': {
-      'ar': 'Terms of Service',
-      'en': 'Terms of Service',
-    },
-    '70eeyjfw': {
-      'ar': 'Invite Friends',
-      'en': 'Invite Friends',
-    },
-    '0ndcol0g': {
-      'ar': 'Profile',
-      'en': 'Profile',
-    },
-    'sp31b2ha': {
-      'ar': 'Home',
-      'en': 'Home',
-    },
-  },
   // users_list
   {
     'nexn3xni': {
@@ -344,10 +289,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // customer_new
   {
-    'qno386d6': {
-      'ar': 'testing data',
-      'en': 'testing data',
-    },
     'nw6qu0jq': {
       'ar': 'profile',
       'en': 'profile. profile',
@@ -418,27 +359,43 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'profile. profile',
     },
   },
-  // custom_navbar
+  // appSettings
   {
-    'mkzsj4l3': {
-      'ar': 'Login',
-      'en': 'Login',
+    'ccjsplnh': {
+      'ar': 'تغير اعدادات التطبيق',
+      'en': '',
     },
-    'd1p2r3o3': {
-      'ar': 'Photo',
-      'en': 'Photo',
+    'piqh14g4': {
+      'ar': 'يمكن تغير الاعدادات العامة من هنا',
+      'en': '',
     },
-    'z84tndpb': {
-      'ar': 'Delatil',
-      'en': 'Delatil',
+    'q39v6p9f': {
+      'ar': 'تغير اللغة',
+      'en': '',
     },
-    '24h0sz5t': {
-      'ar': 'New',
-      'en': 'New',
+    'acitzf5a': {
+      'ar': 'تغير اللغة الي العربيه او الانجليزية',
+      'en': '',
+    },
+    'rptgv03p': {
+      'ar': 'تغير الي الوضع الليلي',
+      'en': '',
+    },
+    'ud04e54g': {
+      'ar': 'تغير اعدادات من الوضع ليلا او نهارا',
+      'en': '',
+    },
+    'rqfoqojd': {
+      'ar': 'Home',
+      'en': '',
     },
   },
   // Miscellaneous
   {
+    '3by7px0n': {
+      'ar': 'Label here...',
+      'en': '',
+    },
     'd04dzvhy': {
       'ar': '',
       'en': '',

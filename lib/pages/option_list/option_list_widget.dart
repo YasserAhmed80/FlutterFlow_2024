@@ -57,7 +57,7 @@ class _OptionListWidgetState extends State<OptionListWidget> {
     context.watch<FFAppState>();
 
     return Container(
-      height: 500.0,
+      height: 400.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).primaryBackground,
         borderRadius: const BorderRadius.only(
@@ -102,7 +102,7 @@ class _OptionListWidgetState extends State<OptionListWidget> {
                                       fontFamily: 'Inter',
                                       color:
                                           FlutterFlowTheme.of(context).primary,
-                                      fontSize: 20.0,
+                                      fontSize: 18.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.w900,
                                     ),
@@ -142,7 +142,7 @@ class _OptionListWidgetState extends State<OptionListWidget> {
             child: Align(
               alignment: const AlignmentDirectional(0.0, 0.0),
               child: Container(
-                height: 300.0,
+                height: 200.0,
                 decoration: const BoxDecoration(),
                 child: Padding(
                   padding: const EdgeInsets.all(2.0),
@@ -215,7 +215,7 @@ class _OptionListWidgetState extends State<OptionListWidget> {
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Inter',
-                                                        fontSize: 20.0,
+                                                        fontSize: 14.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w600,
