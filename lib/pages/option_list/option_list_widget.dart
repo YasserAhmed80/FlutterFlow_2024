@@ -75,6 +75,7 @@ class _OptionListWidgetState extends State<OptionListWidget> {
             padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
             child: Row(
               mainAxisSize: MainAxisSize.max,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Expanded(
                   child: Stack(
@@ -85,7 +86,7 @@ class _OptionListWidgetState extends State<OptionListWidget> {
                           width: MediaQuery.sizeOf(context).width * 1.0,
                           height: 63.0,
                           decoration: const BoxDecoration(),
-                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          alignment: const AlignmentDirectional(0.0, -1.0),
                           child: Align(
                             alignment: const AlignmentDirectional(0.0, 1.0),
                             child: Padding(
@@ -140,9 +141,9 @@ class _OptionListWidgetState extends State<OptionListWidget> {
           ),
           Expanded(
             child: Align(
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: const AlignmentDirectional(0.0, -1.0),
               child: Container(
-                height: 200.0,
+                height: 400.0,
                 decoration: const BoxDecoration(),
                 child: Padding(
                   padding: const EdgeInsets.all(2.0),
@@ -215,7 +216,7 @@ class _OptionListWidgetState extends State<OptionListWidget> {
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Inter',
-                                                        fontSize: 14.0,
+                                                        fontSize: 16.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w600,

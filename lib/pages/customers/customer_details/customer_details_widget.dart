@@ -608,18 +608,13 @@ class _CustomerDetailsWidgetState extends State<CustomerDetailsWidget> {
             ),
             Align(
               alignment: const AlignmentDirectional(0.0, 1.0),
-              child: Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Expanded(
-                    child: wrapWithModel(
-                      model: _model.customNavbarModel,
-                      updateCallback: () => setState(() {}),
-                      child: const CustomNavbarWidget(),
-                    ),
-                  ),
-                ],
+              child: Container(
+                decoration: const BoxDecoration(),
+                child: wrapWithModel(
+                  model: _model.customNavbarModel,
+                  updateCallback: () => setState(() {}),
+                  child: const CustomNavbarWidget(),
+                ),
               ),
             ),
           ],

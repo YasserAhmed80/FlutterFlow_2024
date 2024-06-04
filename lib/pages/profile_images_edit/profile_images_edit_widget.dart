@@ -91,80 +91,95 @@ class _ProfileImagesEditWidgetState extends State<ProfileImagesEditWidget> {
                   width: MediaQuery.sizeOf(context).width * 0.9,
                   height: 300.0,
                   decoration: const BoxDecoration(),
-                  child: wrapWithModel(
-                    model: _model.uploadPhotoModel,
-                    updateCallback: () => setState(() {}),
-                    child: const UploadPhotoWidget(
-                      storageFolder: 'cus_photos',
+                  child: Align(
+                    alignment: const AlignmentDirectional(0.0, -1.0),
+                    child: wrapWithModel(
+                      model: _model.uploadPhotoModel,
+                      updateCallback: () => setState(() {}),
+                      child: const UploadPhotoWidget(
+                        storageFolder: 'cus_photos',
+                      ),
                     ),
                   ),
                 ),
                 Expanded(
-                  child: StreamBuilder<List<CusPhotosRecord>>(
-                    stream: queryCusPhotosRecord(),
-                    builder: (context, snapshot) {
-                      // Customize what your widget looks like when it's loading.
-                      if (!snapshot.hasData) {
-                        return Center(
-                          child: SizedBox(
-                            width: 50.0,
-                            height: 50.0,
-                            child: CircularProgressIndicator(
-                              valueColor: AlwaysStoppedAnimation<Color>(
-                                FlutterFlowTheme.of(context).primary,
+                  child: Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                    child: Container(
+                      constraints: const BoxConstraints(
+                        maxWidth: 800.0,
+                      ),
+                      decoration: const BoxDecoration(),
+                      child: StreamBuilder<List<CusPhotosRecord>>(
+                        stream: queryCusPhotosRecord(),
+                        builder: (context, snapshot) {
+                          // Customize what your widget looks like when it's loading.
+                          if (!snapshot.hasData) {
+                            return Center(
+                              child: SizedBox(
+                                width: 50.0,
+                                height: 50.0,
+                                child: CircularProgressIndicator(
+                                  valueColor: AlwaysStoppedAnimation<Color>(
+                                    FlutterFlowTheme.of(context).primary,
+                                  ),
+                                ),
                               ),
+                            );
+                          }
+                          List<CusPhotosRecord> gridViewCusPhotosRecordList =
+                              snapshot.data!;
+                          return GridView.builder(
+                            padding: EdgeInsets.zero,
+                            gridDelegate:
+                                const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 2,
+                              crossAxisSpacing: 5.0,
+                              mainAxisSpacing: 5.0,
+                              childAspectRatio: 1.0,
                             ),
-                          ),
-                        );
-                      }
-                      List<CusPhotosRecord> gridViewCusPhotosRecordList =
-                          snapshot.data!;
-                      return GridView.builder(
-                        padding: const EdgeInsets.fromLTRB(
-                          0,
-                          5.0,
-                          0,
-                          5.0,
-                        ),
-                        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2,
-                          crossAxisSpacing: 5.0,
-                          mainAxisSpacing: 5.0,
-                          childAspectRatio: 1.0,
-                        ),
-                        scrollDirection: Axis.vertical,
-                        itemCount: gridViewCusPhotosRecordList.length,
-                        itemBuilder: (context, gridViewIndex) {
-                          final gridViewCusPhotosRecord =
-                              gridViewCusPhotosRecordList[gridViewIndex];
-                          return Container(
-                            decoration: const BoxDecoration(),
-                            child: ShowPhotoFromDBWidget(
-                              key: Key(
-                                  'Keyht5_${gridViewIndex}_of_${gridViewCusPhotosRecordList.length}'),
-                              docRef: gridViewCusPhotosRecord,
-                            ),
+                            scrollDirection: Axis.vertical,
+                            itemCount: gridViewCusPhotosRecordList.length,
+                            itemBuilder: (context, gridViewIndex) {
+                              final gridViewCusPhotosRecord =
+                                  gridViewCusPhotosRecordList[gridViewIndex];
+                              return Container(
+                                constraints: const BoxConstraints(
+                                  maxHeight: 300.0,
+                                ),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(0.0),
+                                  shape: BoxShape.rectangle,
+                                ),
+                                alignment: const AlignmentDirectional(0.0, -1.0),
+                                child: Align(
+                                  alignment: const AlignmentDirectional(0.0, -1.0),
+                                  child: ShowPhotoFromDBWidget(
+                                    key: Key(
+                                        'Keywvq_${gridViewIndex}_of_${gridViewCusPhotosRecordList.length}'),
+                                    docRef: gridViewCusPhotosRecord,
+                                  ),
+                                ),
+                              );
+                            },
                           );
                         },
-                      );
-                    },
+                      ),
+                    ),
                   ),
                 ),
               ],
             ),
             Align(
               alignment: const AlignmentDirectional(0.0, 1.0),
-              child: Row(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Expanded(
-                    child: wrapWithModel(
-                      model: _model.customNavbarModel,
-                      updateCallback: () => setState(() {}),
-                      child: const CustomNavbarWidget(),
-                    ),
-                  ),
-                ],
+              child: Container(
+                decoration: const BoxDecoration(),
+                child: wrapWithModel(
+                  model: _model.customNavbarModel,
+                  updateCallback: () => setState(() {}),
+                  child: const CustomNavbarWidget(),
+                ),
               ),
             ),
           ],

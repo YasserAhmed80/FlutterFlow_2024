@@ -4,6 +4,10 @@ import 'app_settings_widget.dart' show AppSettingsWidget;
 import 'package:flutter/material.dart';
 
 class AppSettingsModel extends FlutterFlowModel<AppSettingsWidget> {
+  ///  Local state fields for this page.
+
+  bool? darkMode;
+
   ///  State fields for stateful widgets in this page.
 
   // State field(s) for SwitchListTile widget.

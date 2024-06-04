@@ -367,6 +367,26 @@ class _LoginWidgetState extends State<LoginWidget>
                               0.0, 0.0, 0.0, 16.0),
                           child: FFButtonWidget(
                             onPressed: () async {
+                              if ((_model.passwordTextController.text ==
+                                          '') ||
+                                  (_model.emailAddressTextController.text ==
+                                          '')) {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text(
+                                      'Invalid user name / pwd',
+                                      style: TextStyle(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                      ),
+                                    ),
+                                    duration: const Duration(milliseconds: 4000),
+                                    backgroundColor:
+                                        FlutterFlowTheme.of(context).secondary,
+                                  ),
+                                );
+                                return;
+                              }
                               GoRouter.of(context).prepareAuthEvent();
 
                               final user = await authManager.signInWithEmail(

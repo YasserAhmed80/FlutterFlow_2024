@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'app_settings_model.dart';
 export 'app_settings_model.dart';
 
@@ -22,6 +23,12 @@ class _AppSettingsWidgetState extends State<AppSettingsWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => AppSettingsModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      _model.darkMode = false;
+      setState(() {});
+    });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -137,6 +144,15 @@ class _AppSettingsWidgetState extends State<AppSettingsWidget> {
                   setState(() => _model.switchListTileValue2 = newValue);
                   if (newValue) {
                     setDarkModeSetting(context, ThemeMode.dark);
+                    if (_model.darkMode == true) {
+                      setDarkModeSetting(context, ThemeMode.light);
+                      _model.darkMode = false;
+                      setState(() {});
+                    } else {
+                      setDarkModeSetting(context, ThemeMode.dark);
+                      _model.darkMode = true;
+                      setState(() {});
+                    }
                   }
                 },
                 title: Text(

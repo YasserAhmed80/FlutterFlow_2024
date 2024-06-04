@@ -319,6 +319,18 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'الاسم ',
       'en': 'the name',
     },
+    'b09059uq': {
+      'ar': '',
+      'en': '',
+    },
+    'e20e7rzj': {
+      'ar': '',
+      'en': '',
+    },
+    '0ulr5i4m': {
+      'ar': 'Page Title',
+      'en': '',
+    },
     'o8o9bduq': {
       'ar': 'profile',
       'en': 'profile. profile',

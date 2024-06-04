@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
+import 'dart:js';
+
 import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
 
 Future onProjectLoad() async {
@@ -132,4 +134,6 @@ Future onProjectLoad() async {
   addListOfNumbers('age', 18, 70);
   addListOfNumbers('height', 140, 210);
   addListOfNumbers('weight', 40, 150);
+
+  // set dark mode
 }
